@@ -61,6 +61,7 @@
             this.bathroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bathroom.TabIndex = 1;
             this.bathroom.TabStop = false;
+            this.bathroom.Click += new System.EventHandler(this.bathroom_Click);
             // 
             // bedroom
             // 
@@ -72,6 +73,7 @@
             this.bedroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.bedroom.TabIndex = 2;
             this.bedroom.TabStop = false;
+            this.bedroom.Click += new System.EventHandler(this.bedroom_Click);
             // 
             // kitchen
             // 
@@ -83,6 +85,7 @@
             this.kitchen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.kitchen.TabIndex = 3;
             this.kitchen.TabStop = false;
+            this.kitchen.Click += new System.EventHandler(this.kitchen_Click);
             // 
             // Chooseroom
             // 
