@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Smart_Assistant_Design.NewFolder
+namespace Smart_Assistant_Design.smart_lights
 {
     partial class Room
     {
@@ -31,34 +31,46 @@ namespace Smart_Assistant_Design.NewFolder
         private void InitializeComponent()
         {
             this.infotext = new System.Windows.Forms.Label();
-            this.swapligths = new System.Windows.Forms.Button();
+            this.swapligthsbutton = new System.Windows.Forms.Button();
+            this.changeroom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // infotext
             // 
             this.infotext.AutoSize = true;
-            this.infotext.Location = new System.Drawing.Point(631, 421);
+            this.infotext.Location = new System.Drawing.Point(486, 388);
             this.infotext.Name = "infotext";
-            this.infotext.Size = new System.Drawing.Size(50, 20);
+            this.infotext.Size = new System.Drawing.Size(48, 20);
             this.infotext.TabIndex = 0;
-            this.infotext.Text = "label1";
+            this.infotext.Text = "Lights";
             // 
-            // swapligths
+            // swapligthsbutton
             // 
-            this.swapligths.Location = new System.Drawing.Point(558, 12);
-            this.swapligths.Name = "swapligths";
-            this.swapligths.Size = new System.Drawing.Size(94, 29);
-            this.swapligths.TabIndex = 1;
-            this.swapligths.Text = "Lights";
-            this.swapligths.UseVisualStyleBackColor = true;
-            this.swapligths.Click += new System.EventHandler(this.swaplights_Click);
+            this.swapligthsbutton.Location = new System.Drawing.Point(558, 12);
+            this.swapligthsbutton.Name = "swapligthsbutton";
+            this.swapligthsbutton.Size = new System.Drawing.Size(94, 29);
+            this.swapligthsbutton.TabIndex = 1;
+            this.swapligthsbutton.Text = "button1";
+            this.swapligthsbutton.UseVisualStyleBackColor = true;
+            this.swapligthsbutton.Click += new System.EventHandler(this.swapligthsbutton_Click);
+            // 
+            // changeroom
+            // 
+            this.changeroom.Location = new System.Drawing.Point(12, 12);
+            this.changeroom.Name = "changeroom";
+            this.changeroom.Size = new System.Drawing.Size(94, 29);
+            this.changeroom.TabIndex = 2;
+            this.changeroom.Text = "Exit";
+            this.changeroom.UseVisualStyleBackColor = true;
+            this.changeroom.Click += new System.EventHandler(this.changeroom_Click);
             // 
             // Room
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.swapligths);
+            this.Controls.Add(this.changeroom);
+            this.Controls.Add(this.swapligthsbutton);
             this.Controls.Add(this.infotext);
             this.Name = "Room";
             this.Text = "Room";
@@ -67,14 +79,11 @@ namespace Smart_Assistant_Design.NewFolder
 
         }
 
-        private void swaplights_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
+    
 
         #endregion
-
-        private System.Windows.Forms.Label infotext;
-        private System.Windows.Forms.Button swapligths;
+        public System.Windows.Forms.Label infotext;
+        private System.Windows.Forms.Button swapligthsbutton;
+        private System.Windows.Forms.Button changeroom;
     }
 }

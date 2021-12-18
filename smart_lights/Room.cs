@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Smart_Assistant_Design.NewFolder
+namespace Smart_Assistant_Design.smart_lights
 {
 
     public partial class Room : Form
@@ -15,12 +15,11 @@ namespace Smart_Assistant_Design.NewFolder
         public Room(Roomclass room)
         {
 
+            InitializeComponent();
             r1.image = room.image;
             r1.lights = room.lights;
             r1.room = room.room;
             showroom();
-            InitializeComponent();
-
 
         }
         public void showroom()
@@ -29,34 +28,41 @@ namespace Smart_Assistant_Design.NewFolder
             {
                 //ligthsOFF
                 this.BackgroundImage = Image.FromFile("images/"+r1.room+"OFF.jpg");
-                infotext.Text = "The " + r1.room + "'s lights are OFF!";
-                swapligths.Text = "OPEN LIGTHS";
+                infotext.Text ="The " + r1.room + "'s lights are OFF!";
+                swapligthsbutton.Text = "OPEN LIGTHS";
             }
             else
             {
                 //lightsON
                 this.BackgroundImage = Image.FromFile("images/"+r1.room+"ON.jpg");
                 infotext.Text = "The " + r1.room + "'s lights are ON!";
-                swapligths.Text = "CLOSE LIGTHS";
+                swapligthsbutton.Text = "CLOSE LIGTHS";
             }
         }
 
-        private void swapligths_Click(object sender, EventArgs e)
+        private void swapligthsbutton_Click(object sender, EventArgs e)
         {
             if (r1.lights == "off")
-            { 
+            {
                 r1.lights = "on";
                 this.BackgroundImage = Image.FromFile("images/" + r1.room + "ON.jpg");
                 infotext.Text = "The " + r1.room + "'s lights are ON!";
-                swapligths.Text = "CLOSE LIGTHS";
+                swapligthsbutton.Text = "CLOSE LIGTHS";
             }
             else
             {
                 r1.lights = "off";
                 this.BackgroundImage = Image.FromFile("images/" + r1.room + "OFF.jpg");
                 infotext.Text = "The " + r1.room + "'s lights are OFF!";
-                swapligths.Text = "OPEN LIGTHS";
+                swapligthsbutton.Text = "OPEN LIGTHS";
             }
         }
+
+        private void changeroom_Click(object sender, EventArgs e)
+        {
+            Chooseroom cr = new Chooseroom();
+            cr.Show();
+            this.Close();
+        }
     }
-}
+    }

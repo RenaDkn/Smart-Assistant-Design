@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Smart_Assistant_Design.NewFolder
+namespace Smart_Assistant_Design.smart_lights
 {
     public partial class SmartLights : Form
     {
@@ -19,6 +19,7 @@ namespace Smart_Assistant_Design.NewFolder
         private void chooseroom_Click(object sender, EventArgs e)
         {
             cs.Show();
+            this.Close();
         }
     }
 }

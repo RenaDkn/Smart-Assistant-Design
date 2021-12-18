@@ -1,4 +1,4 @@
-﻿namespace Smart_Assistant_Design.NewFolder
+﻿namespace Smart_Assistant_Design.smart_lights
 {
     partial class SmartLights
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Smart_Assistant_Design.NewFolder
+namespace Smart_Assistant_Design.smart_lights
 {
     public class Roomclass
     {

@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 
-namespace Smart_Assistant_Design.NewFolder
+namespace Smart_Assistant_Design.smart_lights
 {
     
     public partial class Chooseroom : Form
@@ -16,10 +16,7 @@ namespace Smart_Assistant_Design.NewFolder
         public Chooseroom()
         {
             InitializeComponent();
-            livingroom.ImageLocation = "images/livingroom.jpg";
-            bedroom.ImageLocation= "images/bedroom.jpg";
-            kitchen.ImageLocation= "images/kitchen.jpeg";
-            bathroom.ImageLocation= "images/bathroom.jpg";
+            
            
         }
 
@@ -43,6 +40,7 @@ namespace Smart_Assistant_Design.NewFolder
             room2.image = "images/bedroom.jpg";
             Room rm = new Room(room2);
             rm.Show();
+            this.Close();
         }
 
         private void kitchen_Click(object sender, EventArgs e)
@@ -54,7 +52,7 @@ namespace Smart_Assistant_Design.NewFolder
             room3.image = "images/kitchen.jpg";
             Room rm = new Room(room3);
             rm.Show();
-
+            this.Close();
         }
 
         private void bathroom_Click(object sender, EventArgs e)
@@ -66,6 +64,15 @@ namespace Smart_Assistant_Design.NewFolder
             room4.image = "images/bathroom.jpg";
             Room rm = new Room(room4);
             rm.Show();
+            this.Close();
+        }
+
+        private void Chooseroom_Load(object sender, EventArgs e)
+        {
+            livingroom.ImageLocation = "images/livingroom.jpg";
+            bedroom.ImageLocation = "images/bedroom.jpg";
+            kitchen.ImageLocation = "images/kitchen.jpeg";
+            bathroom.ImageLocation = "images/bathroom.jpg";
         }
     }
 }

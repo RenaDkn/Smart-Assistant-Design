@@ -7,15 +7,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Smart_Assistant_Design.smart_lights;
 
 namespace Smart_Assistant_Design
 {
     public partial class main_window : Form
     {
+        SmartLights sm = new SmartLights();
         public main_window()
         {
             InitializeComponent();
         }
 
+        private void SmartLights_Click(object sender, EventArgs e)
+        {
+            sm.Show();
+
+        }
     }
 }
