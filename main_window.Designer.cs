@@ -1,7 +1,7 @@
 ﻿
 namespace Smart_Assistant_Design
 {
-    partial class Form1
+    partial class main_window
     {
         /// <summary>
         ///  Required designer variable.
