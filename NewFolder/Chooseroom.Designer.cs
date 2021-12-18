@@ -94,7 +94,7 @@
             this.Controls.Add(this.bathroom);
             this.Controls.Add(this.livingroom);
             this.Name = "Chooseroom";
-            this.Text = "Choose_room";
+            this.Text = "Chooseroom";
             ((System.ComponentModel.ISupportInitialize)(this.livingroom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bathroom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bedroom)).EndInit();

@@ -8,17 +8,24 @@ using System.Windows.Forms;
 
 namespace Smart_Assistant_Design.NewFolder
 {
-    public partial class SmartLights : Form
-    {
-        Chooseroom cs = new Chooseroom();
-        public SmartLights()
-        {
-            InitializeComponent();
-        }
 
-        private void chooseroom_Click(object sender, EventArgs e)
+    public partial class Room : Form
+    {
+        public Roomclass r1 = new Roomclass();
+        public Room(Roomclass room)
         {
-            cs.Show();
+
+            r1.image = room.image;
+            r1.lights = room.lights;
+            r1.room = room.room;
+            InitializeComponent();
+
+
+        }
+        public void showroom()
+        {
+
+
         }
     }
 }
