@@ -30,26 +30,41 @@ namespace Smart_Assistant_Design
         private void InitializeComponent()
         {
             this.SmartLights = new System.Windows.Forms.Button();
+            this.smart_broom = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SmartLights
             // 
-            this.SmartLights.Location = new System.Drawing.Point(61, 57);
+            this.SmartLights.Location = new System.Drawing.Point(155, 134);
+            this.SmartLights.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SmartLights.Name = "SmartLights";
-            this.SmartLights.Size = new System.Drawing.Size(105, 30);
+            this.SmartLights.Size = new System.Drawing.Size(108, 53);
             this.SmartLights.TabIndex = 0;
             this.SmartLights.Text = "SmartLights";
             this.SmartLights.UseVisualStyleBackColor = true;
             this.SmartLights.Click += new System.EventHandler(this.SmartLights_Click);
             // 
+            // smart_broom
+            // 
+            this.smart_broom.Location = new System.Drawing.Point(324, 134);
+            this.smart_broom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.smart_broom.Name = "smart_broom";
+            this.smart_broom.Size = new System.Drawing.Size(108, 53);
+            this.smart_broom.TabIndex = 1;
+            this.smart_broom.Text = "Smart Broom";
+            this.smart_broom.UseVisualStyleBackColor = true;
+            this.smart_broom.Click += new System.EventHandler(this.smart_broom_Click);
+            // 
             // main_window
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.smart_broom);
             this.Controls.Add(this.SmartLights);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "main_window";
-            this.Text = "Form1";
+            this.Text = "Smart_Broom_Control";
             this.ResumeLayout(false);
 
         }
@@ -57,6 +72,7 @@ namespace Smart_Assistant_Design
         #endregion
 
         private System.Windows.Forms.Button SmartLights;
+        private System.Windows.Forms.Button smart_broom;
     }
 }
 

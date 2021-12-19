@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Smart_Assistant_Design.smart_lights;
+using Smart_Assistant_Design.smart_broom;
 
 namespace Smart_Assistant_Design
 {
@@ -23,6 +24,11 @@ namespace Smart_Assistant_Design
         {
             sm.Show();
 
+        }
+
+        private void smart_broom_Click(object sender, EventArgs e)
+        {
+            new Smart_Broom_Control().Show();
         }
     }
 }

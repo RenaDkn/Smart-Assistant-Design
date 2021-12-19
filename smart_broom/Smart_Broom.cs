@@ -24,6 +24,7 @@ namespace Smart_Assistant_Design.smart_broom
             this.is_cleaning = false;
             this.rooms_to_clean = new Queue();
             this.current_room = null;
+            this.room_progress = 0;
         }
 
         /**
@@ -57,7 +58,7 @@ namespace Smart_Assistant_Design.smart_broom
         {
             get
             {
-                return this.Is_cleaning;
+                return this.is_cleaning;
             }
         }
 
@@ -70,7 +71,7 @@ namespace Smart_Assistant_Design.smart_broom
         {
             get
             {
-                return this.Room_progress;
+                return this.room_progress;
             }
         }
 
@@ -91,7 +92,7 @@ namespace Smart_Assistant_Design.smart_broom
         {
             this.rooms_to_clean.Dequeue();
             if (this.rooms_to_clean.Count != 0) 
-                this.current_room = (Room) rooms_to_clean.Peek();
+                this.current_room = (Room) this.rooms_to_clean.Peek();
         }
 
 
