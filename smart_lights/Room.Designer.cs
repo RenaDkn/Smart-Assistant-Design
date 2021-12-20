@@ -48,7 +48,7 @@ namespace Smart_Assistant_Design.smart_lights
             // 
             this.swapligthsbutton.Location = new System.Drawing.Point(558, 12);
             this.swapligthsbutton.Name = "swapligthsbutton";
-            this.swapligthsbutton.Size = new System.Drawing.Size(94, 29);
+            this.swapligthsbutton.Size = new System.Drawing.Size(131, 29);
             this.swapligthsbutton.TabIndex = 1;
             this.swapligthsbutton.Text = "button1";
             this.swapligthsbutton.UseVisualStyleBackColor = true;

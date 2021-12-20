@@ -29,6 +29,7 @@ namespace Smart_Assistant_Design.smart_lights
             room1.image= "images/livingroom.jpg";
             Room rm = new Room(room1);
             rm.Show();
+            this.Close();
         }
 
         private void bedroom_Click(object sender, EventArgs e)
