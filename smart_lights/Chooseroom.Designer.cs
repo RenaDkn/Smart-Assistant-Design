@@ -54,6 +54,7 @@
             // bathroom
             // 
             this.bathroom.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bathroom.Image = ((System.Drawing.Image)(resources.GetObject("bathroom.Image")));
             this.bathroom.Location = new System.Drawing.Point(480, 224);
             this.bathroom.Name = "bathroom";
             this.bathroom.Size = new System.Drawing.Size(169, 91);
@@ -77,6 +78,7 @@
             // kitchen
             // 
             this.kitchen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kitchen.Image = ((System.Drawing.Image)(resources.GetObject("kitchen.Image")));
             this.kitchen.Location = new System.Drawing.Point(88, 224);
             this.kitchen.Name = "kitchen";
             this.kitchen.Size = new System.Drawing.Size(165, 91);
