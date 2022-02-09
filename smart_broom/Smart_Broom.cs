@@ -7,94 +7,94 @@ using System.Text;
 
 namespace Smart_Assistant_Design.smart_broom
 {
+    enum Broom_Status
+    {
+        SLEEP,
+        IN_PROCESS,
+        CHARGING
+    }
+
+    enum Room_Status
+    {
+        IN_PROCESS,
+        DONE,
+        WAITING
+    }
+
+    class Room_To_Clean
+    {
+        private Room_Status room_status;
+        private String room;
+
+        public Room_To_Clean(Room_Status room_status, String room)
+        {
+            this.room_status = room_status;
+            this.room = room;
+        }
+
+        public Room_Status Room_status
+        {
+            get
+            {
+                return this.room_status;
+            }
+        }
+
+        public String Room
+        {
+            get
+            {
+                return this.room;
+            }
+        }
+    }
 
     class Smart_Broom
     {
-        private short     battery_precentage;
-        private Boolean   is_on_base;
-        private Boolean   is_cleaning;
-        private Queue     rooms_to_clean;
-        private Room      current_room;
-        private short     room_progress;
+        private Broom_Status status;
+        private short presentage;
+        private Queue<Room_To_Clean> rooms_to_clean;
 
         public Smart_Broom()
         {
-            this.battery_precentage = 100;
-            this.is_on_base = true;
-            this.is_cleaning = false;
-            this.rooms_to_clean = new Queue();
-            this.current_room = null;
-            this.room_progress = 0;
+            status = Broom_Status.SLEEP;
+            presentage = 100;
+            rooms_to_clean = new Queue<Room_To_Clean>();
         }
 
-        /**
-         * Returns the battery precentage of the broom.
-         */
-        public short Batter_precentage
+        public Broom_Status Status
         {
             get
             {
-                return this.battery_precentage;
+                return this.status;
+            }
+            set
+            {
+                this.status = value;
             }
         }
 
-        /**
-         * Returns if the broom is currently in the base
-         * or not.
-         */
-        public Boolean Is_on_base
+        public short Presentage
         {
             get
             {
-                return this.is_on_base;
+                return this.presentage;
             }
-        }
-
-        /**
-         * Returns if the broom is currently cleaning
-         * a room or not.
-         */
-        public Boolean Is_cleaning
-        {
-            get
+            set 
             {
-                return this.is_cleaning;
+                this.presentage = value;
             }
         }
 
-        /**
-         *  Current progress of the broom in the current room.
-         *  The return value is a number 0 to 100.
-         */
-        // TODO - Make the neccesery thigs, to check and increase the progress.
-        public short Room_progress
+        public Queue<Room_To_Clean> get_rooms_to_clean()
         {
-            get
-            {
-                return this.room_progress;
-            }
+            return this.rooms_to_clean;
         }
 
-        /**
-         * Adds a new room to the queue.
-         */
-        public void clean_room(Room room)
+        public void set_room_to_clean(Room_To_Clean room)
         {
             this.rooms_to_clean.Enqueue(room);
-            if (this.current_room == null) this.current_room = room;
         }
-
-        /**
-         * Remove a room from the queue. Finished 
-         * the cleaning on this room.
-         */
-        public void move_to_next_room()
-        {
-            this.rooms_to_clean.Dequeue();
-            if (this.rooms_to_clean.Count != 0) 
-                this.current_room = (Room) this.rooms_to_clean.Peek();
-        }
-
 
     }
 }
