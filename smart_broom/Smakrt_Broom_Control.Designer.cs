@@ -159,15 +159,26 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // battery_life
             // 
+            this.battery_life.Enabled = true;
             this.battery_life.Interval = 1000;
+            this.battery_life.Tick += new System.EventHandler(this.battery_life_tick);
             // 
             // battery_charge
             // 
+            this.battery_charge.Enabled = true;
             this.battery_charge.Interval = 2000;
+            this.battery_charge.Tick += new System.EventHandler(this.battery_charge_tick);
             // 
             // room_clean
             // 
+            this.room_clean.Enabled = true;
             this.room_clean.Interval = 3000;
+            // 
+            // control_refresh
+            // 
+            this.control_refresh.Enabled = true;
+            this.control_refresh.Interval = 1500;
+            this.control_refresh.Tick += new System.EventHandler(this.control_refresh_tick);
             // 
             // Smart_Broom_Control
             // 
