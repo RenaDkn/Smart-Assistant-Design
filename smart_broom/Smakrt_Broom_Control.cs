@@ -1,10 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using Smart_Assistant_Design.smart_broom.status;
+using Smart_Assistant_Design.smart_broom.rooms;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace Smart_Assistant_Design.smart_broom
@@ -57,12 +55,50 @@ namespace Smart_Assistant_Design.smart_broom
             if (smart_broom.Status == Broom_Status.IN_PROCESS)
             {
                 if (smart_broom.Presentage < 15)
-                    return;
-                    // TODO - Stop claning.
+                    this.stop_cleaning_click(null, null);
                 else
                     smart_broom.Presentage -= 2;
             }
                
+        }
+
+        private void start_cleaning_click(object sender, EventArgs e)
+        {
+            // If there is no rooms to clean in the queue.
+            if (smart_broom.get_rooms_to_clean().Count == 0)
+            {
+                MessageBox.Show("Unable to start, no room has been selected.");
+                return;
+            }
+            // Otherwise give the order to start the broom.
+            smart_broom.Status = Broom_Status.IN_PROCESS;
+        }
+
+        private void stop_cleaning_click(object sender, EventArgs e)
+        {
+            // Check the state of the broom.
+            if (smart_broom.Status == Broom_Status.SLEEP ||
+                smart_broom.Status == Broom_Status.CHARGING)
+            {
+                MessageBox.Show("The broom is already stoped.");
+            }
+
+            if (smart_broom.Presentage < 100)
+                smart_broom.Status = Broom_Status.CHARGING;
+            else
+                smart_broom.Status = Broom_Status.SLEEP;
+        }
+
+        private void task_queue_add_room(object sender, ItemCheckEventArgs e)
+        {
+            // Add a new selected room in the queue.
+            // TODO - Remove if unchecked.
+            smart_broom.get_rooms_to_clean().Enqueue(
+                new Room_To_Clean(
+                    Room_Status.WAITING,
+                    ((CheckedListBox) sender).Items[e.Index].ToString()
+                )
+            );
         }
     }
 }

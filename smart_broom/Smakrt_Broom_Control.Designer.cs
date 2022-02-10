@@ -38,9 +38,8 @@ namespace Smart_Assistant_Design.smart_broom
             this.label1 = new System.Windows.Forms.Label();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.rooms_label = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.start_cleaning = new System.Windows.Forms.Button();
+            this.stop_cleaning = new System.Windows.Forms.Button();
             this.battery_life = new System.Windows.Forms.Timer(this.components);
             this.battery_charge = new System.Windows.Forms.Timer(this.components);
             this.room_clean = new System.Windows.Forms.Timer(this.components);
@@ -119,6 +118,7 @@ namespace Smart_Assistant_Design.smart_broom
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(368, 148);
             this.checkedListBox1.TabIndex = 10;
+            this.checkedListBox1.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.task_queue_add_room);
             // 
             // rooms_label
             // 
@@ -130,32 +130,25 @@ namespace Smart_Assistant_Design.smart_broom
             this.rooms_label.TabIndex = 11;
             this.rooms_label.Text = "Rooms";
             // 
-            // button1
+            // start_cleaning
             // 
-            this.button1.Location = new System.Drawing.Point(175, 277);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 44);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Start cleaning";
-            this.button1.UseVisualStyleBackColor = true;
+            this.start_cleaning.Location = new System.Drawing.Point(175, 277);
+            this.start_cleaning.Name = "start_cleaning";
+            this.start_cleaning.Size = new System.Drawing.Size(95, 44);
+            this.start_cleaning.TabIndex = 12;
+            this.start_cleaning.Text = "Start cleaning";
+            this.start_cleaning.UseVisualStyleBackColor = true;
+            this.start_cleaning.Click += new System.EventHandler(this.start_cleaning_click);
             // 
-            // button2
+            // stop_cleaning
             // 
-            this.button2.Location = new System.Drawing.Point(316, 277);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 44);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "Add room";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(447, 277);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(95, 44);
-            this.button3.TabIndex = 14;
-            this.button3.Text = "Stop cleaning";
-            this.button3.UseVisualStyleBackColor = true;
+            this.stop_cleaning.Location = new System.Drawing.Point(447, 277);
+            this.stop_cleaning.Name = "stop_cleaning";
+            this.stop_cleaning.Size = new System.Drawing.Size(95, 44);
+            this.stop_cleaning.TabIndex = 14;
+            this.stop_cleaning.Text = "Stop cleaning";
+            this.stop_cleaning.UseVisualStyleBackColor = true;
+            this.stop_cleaning.Click += new System.EventHandler(this.stop_cleaning_click);
             // 
             // battery_life
             // 
@@ -185,9 +178,8 @@ namespace Smart_Assistant_Design.smart_broom
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.stop_cleaning);
+            this.Controls.Add(this.start_cleaning);
             this.Controls.Add(this.rooms_label);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.label1);
@@ -212,9 +204,8 @@ namespace Smart_Assistant_Design.smart_broom
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Label rooms_label;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button start_cleaning;
+        private System.Windows.Forms.Button stop_cleaning;
         private System.Windows.Forms.Timer battery_life;
         private System.Windows.Forms.Timer battery_charge;
         private System.Windows.Forms.Timer room_clean;
