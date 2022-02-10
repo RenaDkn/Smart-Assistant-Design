@@ -2,52 +2,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-
-using System.Text;
+using Smart_Assistant_Design.smart_broom.status;
+using Smart_Assistant_Design.smart_broom.rooms;
 
 namespace Smart_Assistant_Design.smart_broom
 {
-    enum Broom_Status
-    {
-        SLEEP,
-        IN_PROCESS,
-        CHARGING
-    }
-
-    enum Room_Status
-    {
-        IN_PROCESS,
-        DONE,
-        WAITING
-    }
-
-    class Room_To_Clean
-    {
-        private Room_Status room_status;
-        private String room;
-
-        public Room_To_Clean(Room_Status room_status, String room)
-        {
-            this.room_status = room_status;
-            this.room = room;
-        }
-
-        public Room_Status Room_status
-        {
-            get
-            {
-                return this.room_status;
-            }
-        }
-
-        public String Room
-        {
-            get
-            {
-                return this.room;
-            }
-        }
-    }
 
     class Smart_Broom
     {
