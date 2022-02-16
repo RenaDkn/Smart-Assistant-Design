@@ -19,6 +19,8 @@ namespace Smart_Assistant_Design.smart_lights
             r1.image = room.image;
             r1.lights = room.lights;
             r1.room = room.room;
+            infotext.Visible = false;
+            infoButtton.Text = "Show Info";
             showroom();
 
         }
@@ -63,6 +65,21 @@ namespace Smart_Assistant_Design.smart_lights
             Chooseroom cr = new Chooseroom();
             cr.Show();
             this.Close();
+        }
+
+        private void infoButtton_Click(object sender, EventArgs e)
+        {
+            if (infotext.Visible)
+            {
+                infotext.Visible = false;
+                infoButtton.Text = "Show Info";
+            }
+            else
+            {
+                infotext.Visible = true;
+                infoButtton.Text = "Hide Info";
+            }
+            
         }
     }
     }

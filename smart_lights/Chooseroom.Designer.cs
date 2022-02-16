@@ -33,6 +33,11 @@
             this.bathroom = new System.Windows.Forms.PictureBox();
             this.bedroom = new System.Windows.Forms.PictureBox();
             this.kitchen = new System.Windows.Forms.PictureBox();
+            this.Room1Label = new System.Windows.Forms.Label();
+            this.Room2Label = new System.Windows.Forms.Label();
+            this.Room3Label = new System.Windows.Forms.Label();
+            this.Room4Label = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.livingroom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bathroom)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bedroom)).BeginInit();
@@ -43,7 +48,7 @@
             // 
             this.livingroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.livingroom.Image = ((System.Drawing.Image)(resources.GetObject("livingroom.Image")));
-            this.livingroom.Location = new System.Drawing.Point(88, 22);
+            this.livingroom.Location = new System.Drawing.Point(88, 62);
             this.livingroom.Name = "livingroom";
             this.livingroom.Size = new System.Drawing.Size(165, 91);
             this.livingroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -55,7 +60,7 @@
             // 
             this.bathroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bathroom.Image = ((System.Drawing.Image)(resources.GetObject("bathroom.Image")));
-            this.bathroom.Location = new System.Drawing.Point(480, 224);
+            this.bathroom.Location = new System.Drawing.Point(489, 224);
             this.bathroom.Name = "bathroom";
             this.bathroom.Size = new System.Drawing.Size(169, 91);
             this.bathroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -67,7 +72,7 @@
             // 
             this.bedroom.Cursor = System.Windows.Forms.Cursors.Hand;
             this.bedroom.Image = ((System.Drawing.Image)(resources.GetObject("bedroom.Image")));
-            this.bedroom.Location = new System.Drawing.Point(480, 22);
+            this.bedroom.Location = new System.Drawing.Point(489, 62);
             this.bedroom.Name = "bedroom";
             this.bedroom.Size = new System.Drawing.Size(169, 91);
             this.bedroom.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -87,15 +92,67 @@
             this.kitchen.TabStop = false;
             this.kitchen.Click += new System.EventHandler(this.kitchen_Click);
             // 
+            // Room1Label
+            // 
+            this.Room1Label.AutoSize = true;
+            this.Room1Label.Location = new System.Drawing.Point(88, 160);
+            this.Room1Label.Name = "Room1Label";
+            this.Room1Label.Size = new System.Drawing.Size(57, 20);
+            this.Room1Label.TabIndex = 4;
+            this.Room1Label.Text = "Room1";
+            // 
+            // Room2Label
+            // 
+            this.Room2Label.AutoSize = true;
+            this.Room2Label.Location = new System.Drawing.Point(489, 160);
+            this.Room2Label.Name = "Room2Label";
+            this.Room2Label.Size = new System.Drawing.Size(57, 20);
+            this.Room2Label.TabIndex = 4;
+            this.Room2Label.Text = "Room2";
+            // 
+            // Room3Label
+            // 
+            this.Room3Label.AutoSize = true;
+            this.Room3Label.Location = new System.Drawing.Point(88, 340);
+            this.Room3Label.Name = "Room3Label";
+            this.Room3Label.Size = new System.Drawing.Size(57, 20);
+            this.Room3Label.TabIndex = 4;
+            this.Room3Label.Text = "Room3";
+            // 
+            // Room4Label
+            // 
+            this.Room4Label.AutoSize = true;
+            this.Room4Label.Location = new System.Drawing.Point(489, 340);
+            this.Room4Label.Name = "Room4Label";
+            this.Room4Label.Size = new System.Drawing.Size(57, 20);
+            this.Room4Label.TabIndex = 4;
+            this.Room4Label.Text = "Room4";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 13);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(94, 29);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Exit";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Chooseroom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.Room4Label);
+            this.Controls.Add(this.Room3Label);
+            this.Controls.Add(this.Room2Label);
+            this.Controls.Add(this.Room1Label);
             this.Controls.Add(this.kitchen);
             this.Controls.Add(this.bedroom);
             this.Controls.Add(this.bathroom);
             this.Controls.Add(this.livingroom);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.Name = "Chooseroom";
             this.Text = "Chooseroom";
             this.Load += new System.EventHandler(this.Chooseroom_Load);
@@ -104,6 +161,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.bedroom)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kitchen)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -113,5 +171,12 @@
         private System.Windows.Forms.PictureBox bathroom;
         private System.Windows.Forms.PictureBox bedroom;
         private System.Windows.Forms.PictureBox kitchen;
+        private System.Windows.Forms.Label Room1Label;
+        private System.Windows.Forms.Label Room2Label;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label Room4Label;
+        private System.Windows.Forms.Label Room3Label;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }

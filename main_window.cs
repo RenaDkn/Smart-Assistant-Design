@@ -14,7 +14,7 @@ namespace Smart_Assistant_Design
 {
     public partial class main_window : Form
     {
-        SmartLights sm = new SmartLights();
+        Chooseroom cr = new Chooseroom();
         public main_window()
         {
             InitializeComponent();
@@ -22,7 +22,7 @@ namespace Smart_Assistant_Design
 
         private void SmartLights_Click(object sender, EventArgs e)
         {
-            sm.Show();
+            cr.Show();
 
         }
 

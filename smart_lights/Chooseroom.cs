@@ -74,6 +74,17 @@ namespace Smart_Assistant_Design.smart_lights
             bedroom.ImageLocation = "images/bedroom.jpg";
             kitchen.ImageLocation = "images/kitchen.jpeg";
             bathroom.ImageLocation = "images/bathroom.jpg";
+            Room1Label.Text = "Living room";
+            Room2Label.Text = "Bed room";
+            Room3Label.Text = "Kitchen";
+            Room4Label.Text = "Bathroom";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            main_window mw = new main_window();
+            mw.Show();
+            this.Close();
         }
     }
 }
