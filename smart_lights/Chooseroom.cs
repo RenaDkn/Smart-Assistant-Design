@@ -15,9 +15,7 @@ namespace Smart_Assistant_Design.smart_lights
         
         public Chooseroom()
         {
-            InitializeComponent();
-            
-           
+            InitializeComponent();           
         }
 
         private void livingroom_Click(object sender, EventArgs e)

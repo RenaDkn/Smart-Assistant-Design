@@ -67,7 +67,7 @@ namespace Smart_Assistant_Design.smart_lights
             // 
             // infoButtton
             // 
-            this.infoButtton.Location = new System.Drawing.Point(477, 333);
+            this.infoButtton.Location = new System.Drawing.Point(558, 317);
             this.infoButtton.Name = "infoButtton";
             this.infoButtton.Size = new System.Drawing.Size(94, 29);
             this.infoButtton.TabIndex = 3;

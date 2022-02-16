@@ -11,7 +11,7 @@ namespace Smart_Assistant_Design.smart_lights
 
     public partial class Room : Form
     {
-        public Roomclass r1 = new Roomclass();
+        Roomclass r1 = new Roomclass();
         public Room(Roomclass room)
         {
 
@@ -22,9 +22,10 @@ namespace Smart_Assistant_Design.smart_lights
             infotext.Visible = false;
             infoButtton.Text = "Show Info";
             showroom();
+           
 
         }
-        public void showroom()
+        private void showroom()
         {
             if (r1.lights =="off")
             {
@@ -82,4 +83,4 @@ namespace Smart_Assistant_Design.smart_lights
             
         }
     }
-    }
+}

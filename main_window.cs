@@ -14,7 +14,7 @@ namespace Smart_Assistant_Design
 {
     public partial class main_window : Form
     {
-        Chooseroom cr = new Chooseroom();
+        
         public main_window()
         {
             InitializeComponent();
@@ -22,13 +22,22 @@ namespace Smart_Assistant_Design
 
         private void SmartLights_Click(object sender, EventArgs e)
         {
+            Chooseroom cr = new Chooseroom();
             cr.Show();
+            this.Hide();
 
         }
 
         private void smart_broom_Click(object sender, EventArgs e)
         {
             new Smart_Broom_Control().Show();
+        }
+
+        private void main_window_Load(object sender, EventArgs e)
+        {
+            this.BackColor = Color.FromArgb(217, 187, 160);
+            SmartLights.BackColor = Color.FromArgb(3, 88, 140);
+            SmartLights.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
     }
 }

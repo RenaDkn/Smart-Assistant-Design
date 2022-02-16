@@ -36,6 +36,11 @@ namespace Smart_Assistant_Design
             // 
             // SmartLights
             // 
+            this.SmartLights.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.SmartLights.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.SmartLights.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.SmartLights.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.SmartLights.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.SmartLights.Location = new System.Drawing.Point(90, 179);
             this.SmartLights.Name = "SmartLights";
             this.SmartLights.Size = new System.Drawing.Size(123, 71);
@@ -46,6 +51,8 @@ namespace Smart_Assistant_Design
             // 
             // smart_broom
             // 
+            this.smart_broom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smart_broom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.smart_broom.Location = new System.Drawing.Point(301, 179);
             this.smart_broom.Name = "smart_broom";
             this.smart_broom.Size = new System.Drawing.Size(123, 71);
@@ -74,6 +81,7 @@ namespace Smart_Assistant_Design
             this.Controls.Add(this.SmartLights);
             this.Name = "main_window";
             this.Text = "Smart_Broom_Control";
+            this.Load += new System.EventHandler(this.main_window_Load);
             this.ResumeLayout(false);
 
         }
