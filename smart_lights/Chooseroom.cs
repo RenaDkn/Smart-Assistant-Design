@@ -11,7 +11,7 @@ namespace Smart_Assistant_Design.smart_lights
     
     public partial class Chooseroom : Form
     {
-        String room;
+        public String room;
         
         public Chooseroom()
         {
@@ -21,10 +21,10 @@ namespace Smart_Assistant_Design.smart_lights
         private void livingroom_Click(object sender, EventArgs e)
         {
             room = "livingroom";
-            Roomclass room1 = new Roomclass();
-            room1.room = room;
-            room1.lights = "off";
-            room1.image= "images/livingroom.jpg";
+            var room1 = new Roomclass();
+            room1.SetRoom(room);
+            room1.SetLights("off");
+            room1.SetImage("images/livingroom.jpg");
             Room rm = new Room(room1);
             rm.Show();
             this.Close();
@@ -33,10 +33,10 @@ namespace Smart_Assistant_Design.smart_lights
         private void bedroom_Click(object sender, EventArgs e)
         {
             room = "bedroom";
-            Roomclass room2= new Roomclass();
-            room2.room = room;
-            room2.lights = "off";
-            room2.image = "images/bedroom.jpg";
+            var room2= new Roomclass();
+            room2.SetRoom(room);
+            room2.SetLights("off");
+            room2.SetImage("images/bedroom.jpg");
             Room rm = new Room(room2);
             rm.Show();
             this.Close();
@@ -45,10 +45,10 @@ namespace Smart_Assistant_Design.smart_lights
         private void kitchen_Click(object sender, EventArgs e)
         {
             room = "kitchen";
-            Roomclass room3 = new Roomclass();
-            room3.room = room;
-            room3.lights = "off";
-            room3.image = "images/kitchen.jpg";
+            var room3 = new Roomclass();
+            room3.SetRoom(room);
+            room3.SetLights("off");
+            room3.SetImage("images/kitchen.jpg");
             Room rm = new Room(room3);
             rm.Show();
             this.Close();
@@ -57,10 +57,10 @@ namespace Smart_Assistant_Design.smart_lights
         private void bathroom_Click(object sender, EventArgs e)
         {
             room = "bathroom";
-            Roomclass room4 = new Roomclass();
-            room4.room = room;
-            room4.lights = "off";
-            room4.image = "images/bathroom.jpg";
+            var room4 = new Roomclass();
+            room4.SetRoom(room);
+            room4.SetLights("off");
+            room4.SetImage("images/bathroom.jpg");
             Room rm = new Room(room4);
             rm.Show();
             this.Close();
@@ -76,9 +76,16 @@ namespace Smart_Assistant_Design.smart_lights
             Room2Label.Text = "Bed room";
             Room3Label.Text = "Kitchen";
             Room4Label.Text = "Bathroom";
+            this.BackColor = Color.FromArgb(217, 187, 160);
+            exitbutton.BackColor = Color.FromArgb(3, 88, 140);
+            exitbutton.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            Room1Label.BackColor = Color.FromArgb(3, 88, 140);
+            Room2Label.BackColor = Color.FromArgb(3, 88, 140);
+            Room3Label.BackColor = Color.FromArgb(3, 88, 140);
+            Room4Label.BackColor = Color.FromArgb(3, 88, 140);
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void exitbutton_Click(object sender, EventArgs e)
         {
             main_window mw = new main_window();
             mw.Show();

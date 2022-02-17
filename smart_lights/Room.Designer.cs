@@ -39,17 +39,23 @@ namespace Smart_Assistant_Design.smart_lights
             // infotext
             // 
             this.infotext.AutoSize = true;
-            this.infotext.Location = new System.Drawing.Point(486, 388);
+            this.infotext.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infotext.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.infotext.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.infotext.Location = new System.Drawing.Point(12, 421);
             this.infotext.Name = "infotext";
-            this.infotext.Size = new System.Drawing.Size(48, 20);
+            this.infotext.Size = new System.Drawing.Size(53, 19);
             this.infotext.TabIndex = 0;
             this.infotext.Text = "Lights";
             // 
             // swapligthsbutton
             // 
-            this.swapligthsbutton.Location = new System.Drawing.Point(558, 12);
+            this.swapligthsbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.swapligthsbutton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.swapligthsbutton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.swapligthsbutton.Location = new System.Drawing.Point(547, 12);
             this.swapligthsbutton.Name = "swapligthsbutton";
-            this.swapligthsbutton.Size = new System.Drawing.Size(131, 29);
+            this.swapligthsbutton.Size = new System.Drawing.Size(94, 29);
             this.swapligthsbutton.TabIndex = 1;
             this.swapligthsbutton.Text = "button1";
             this.swapligthsbutton.UseVisualStyleBackColor = true;
@@ -57,6 +63,9 @@ namespace Smart_Assistant_Design.smart_lights
             // 
             // changeroom
             // 
+            this.changeroom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.changeroom.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.changeroom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.changeroom.Location = new System.Drawing.Point(12, 12);
             this.changeroom.Name = "changeroom";
             this.changeroom.Size = new System.Drawing.Size(94, 29);
@@ -67,7 +76,10 @@ namespace Smart_Assistant_Design.smart_lights
             // 
             // infoButtton
             // 
-            this.infoButtton.Location = new System.Drawing.Point(558, 317);
+            this.infoButtton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.infoButtton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.infoButtton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.infoButtton.Location = new System.Drawing.Point(647, 12);
             this.infoButtton.Name = "infoButtton";
             this.infoButtton.Size = new System.Drawing.Size(94, 29);
             this.infoButtton.TabIndex = 3;
@@ -86,6 +98,7 @@ namespace Smart_Assistant_Design.smart_lights
             this.Controls.Add(this.infotext);
             this.Name = "Room";
             this.Text = "Room";
+            this.Load += new System.EventHandler(this.Room_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
