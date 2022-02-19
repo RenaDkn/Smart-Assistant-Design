@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>Smart_Assistant_Design</RootNamespace>
     <UseWindowsForms>true</UseWindowsForms>
+    <StartupObject></StartupObject>
   </PropertyGroup>
 
   <ItemGroup>

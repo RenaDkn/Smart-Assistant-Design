@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace Smart_Assistant_Design.smart_broom
 {
@@ -14,7 +15,18 @@ namespace Smart_Assistant_Design.smart_broom
         public Smart_Broom_Control()
         {
             InitializeComponent();
-            smart_broom = new Smart_Broom();
+            this.smart_broom = new Smart_Broom();
+            this.BackColor = Color.FromArgb(217, 187, 160);
+            this.start_cleaning.BackColor = Color.FromArgb(3, 88, 140);
+            this.start_cleaning.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.stop_cleaning.BackColor = Color.FromArgb(3, 88, 140);
+            this.stop_cleaning.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.add_room.BackColor = Color.FromArgb(3, 88, 140);
+            this.add_room.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.remove_room.BackColor = Color.FromArgb(3, 88, 140);
+            this.remove_room.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.add_room_input.BackColor = Color.FromArgb(3, 88, 140);
+            this.add_room_input.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void refresh_control_panel()
@@ -26,9 +38,13 @@ namespace Smart_Assistant_Design.smart_broom
                                 (smart_broom.Status == Broom_Status.IN_PROCESS)? "in progress": "charging";
             // Refresh task queue.
             this.task_queue.Items.Clear();
-            smart_broom.get_rooms_to_clean().Select(curr_room =>
-                this.task_queue.Items.Add(curr_room)
-            );
+
+            foreach (Room_To_Clean curr_room in 
+                     smart_broom.get_rooms_to_clean())
+            {
+                this.task_queue.Items.Add(curr_room.Room);
+            }
+
         }
 
         private void control_refresh_tick(object sender, EventArgs e)
@@ -91,14 +107,49 @@ namespace Smart_Assistant_Design.smart_broom
 
         private void task_queue_add_room(object sender, ItemCheckEventArgs e)
         {
-            // Add a new selected room in the queue.
-            // TODO - Remove if unchecked.
+            // If uncheck remove from queue.
+            if (((CheckedListBox) sender).GetItemCheckState(e.Index) == CheckState.Unchecked)
+            {
+                foreach (Room_To_Clean curr_room in
+                         smart_broom.get_rooms_to_clean())
+                {
+                    if (curr_room.Room.Equals(((CheckedListBox)sender).Items[e.Index]))
+                        smart_broom.get_rooms_to_clean().ToList<Room_To_Clean>().Remove(curr_room);
+                }
+                return;
+            }
+
             smart_broom.get_rooms_to_clean().Enqueue(
                 new Room_To_Clean(
                     Room_Status.WAITING,
                     ((CheckedListBox) sender).Items[e.Index].ToString()
                 )
             );
+        }
+
+        private void add_room_click(object sender, EventArgs e)
+        {
+            this.add_room_input.Visible = true;
+            this.add_remove_label.Visible = true;
+            this.add_room_input.Visible = true;
+        }
+
+        private void hide_input_fields()
+        {
+            this.add_room_input.Visible = false;
+            this.add_remove_label.Visible = false;
+            this.add_room_input.Visible = false;
+        }
+
+        private void room_change_enter(object sender, EventArgs e)
+        {
+            // TODO - Make it work on enter. Save the room.
+            hide_input_fields();
+        }
+
+        private void add_room_input_click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
