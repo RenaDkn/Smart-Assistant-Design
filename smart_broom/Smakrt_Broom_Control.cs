@@ -1,7 +1,6 @@
 ﻿using Smart_Assistant_Design.smart_broom.status;
 using Smart_Assistant_Design.smart_broom.rooms;
 using System;
-using System.Data;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;

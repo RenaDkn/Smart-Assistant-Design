@@ -53,6 +53,8 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             // add_event
             // 
+            this.add_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.add_event.ForeColor = System.Drawing.SystemColors.Window;
             this.add_event.Location = new System.Drawing.Point(51, 351);
             this.add_event.Name = "add_event";
             this.add_event.Size = new System.Drawing.Size(113, 63);
@@ -62,6 +64,8 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             // delete_event
             // 
+            this.delete_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.delete_event.ForeColor = System.Drawing.SystemColors.Window;
             this.delete_event.Location = new System.Drawing.Point(329, 351);
             this.delete_event.Name = "delete_event";
             this.delete_event.Size = new System.Drawing.Size(113, 63);
@@ -71,7 +75,9 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             // search_event
             // 
-            this.search_event.Location = new System.Drawing.Point(627, 351);
+            this.search_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.search_event.ForeColor = System.Drawing.SystemColors.Window;
+            this.search_event.Location = new System.Drawing.Point(621, 351);
             this.search_event.Name = "search_event";
             this.search_event.Size = new System.Drawing.Size(113, 63);
             this.search_event.TabIndex = 3;
@@ -96,40 +102,44 @@ namespace Smart_Assistant_Design.daily_plan
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.Window;
             this.label1.Location = new System.Drawing.Point(129, 189);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(107, 25);
+            this.label1.Size = new System.Drawing.Size(115, 25);
             this.label1.TabIndex = 7;
             this.label1.Text = "Event Name";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.SystemColors.Window;
             this.label2.Location = new System.Drawing.Point(129, 258);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 25);
+            this.label2.Size = new System.Drawing.Size(106, 25);
             this.label2.TabIndex = 8;
             this.label2.Text = "Event Type";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.SystemColors.Window;
             this.label3.Location = new System.Drawing.Point(494, 189);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(97, 25);
+            this.label3.Size = new System.Drawing.Size(105, 25);
             this.label3.TabIndex = 9;
             this.label3.Text = "Event Date";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.SystemColors.Window;
             this.label4.Location = new System.Drawing.Point(493, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 25);
+            this.label4.Size = new System.Drawing.Size(107, 25);
             this.label4.TabIndex = 10;
             this.label4.Text = "Event Time";
             // 

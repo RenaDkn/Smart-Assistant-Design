@@ -26,7 +26,6 @@ namespace Smart_Assistant_Design
             Chooseroom cr = new Chooseroom();
             cr.Show();
             this.Hide();
-
         }
 
         private void smart_broom_Click(object sender, EventArgs e)
