@@ -18,6 +18,7 @@ namespace Smart_Assistant_Design
         public main_window()
         {
             InitializeComponent();
+            new daily_plan.Daily_Plan_Manager().Show();
         }
 
         private void SmartLights_Click(object sender, EventArgs e)
