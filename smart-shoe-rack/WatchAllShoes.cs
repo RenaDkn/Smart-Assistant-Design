@@ -11,6 +11,8 @@ namespace Smart_Assistant_Design.smart_shoe_rack
     public partial class WatchAllShoes : Form
     {
         string execute;
+        int image;
+        
         public WatchAllShoes(string ex)
         {
             InitializeComponent();
@@ -31,14 +33,26 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             nickname_label.BackColor = Color.FromArgb(3, 88, 140);
             attributes_label.BackColor = Color.FromArgb(3, 88, 140);
             index_label.BackColor = Color.FromArgb(3, 88, 140);
+            info_label.BackColor = Color.FromArgb(3, 88, 140);
+            info_label.Visible = false;
             if (execute == "find")
             {
                 prev_button.Enabled = false;
                 prev_button.Visible = false;
                 next_button.Enabled = false;
                 next_button.Visible = false;
-               //pictureBox1.ImageLocation = "shoes/shoes2.png";
-                
+                info_label.Visible = true;
+
+            }
+            else if (execute == "watch")
+            {
+                prev_button.Enabled = true;
+                prev_button.Visible = true;
+                next_button.Enabled = true;
+                next_button.Visible = true;
+
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes1.jpg");
+                image = 1;
             }
             else
             {
@@ -46,5 +60,56 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             }
 
         }
-    }
+        private void next_button_Click(object sender, EventArgs e)
+        {
+      
+            if (image == 1)
+            {
+                image = 2;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes2.png");
+            }
+            else if (image==2)
+            {
+                image = 3;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes"+image+".jpg");
+            }else if (image == 3)
+            {
+                image = 4;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+            }
+            else
+            {
+                image = 1;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+            }
+            
+        }
+
+        private void prev_button_Click(object sender, EventArgs e)
+        {
+            if (image == 1)
+            {
+                image = 4;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+            }
+            else if (image == 2)
+            {
+                image = 1;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+            }
+            else if (image == 3)
+            {
+                image = 2;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes2.png");
+            }
+            else
+            {
+                image = 3;
+                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+            }
+
+        }
+    }   
+        
+    
 }

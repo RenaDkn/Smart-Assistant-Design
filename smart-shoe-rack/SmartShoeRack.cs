@@ -32,6 +32,7 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             insert_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             find_button.BackColor = Color.FromArgb(3, 88, 140);
             find_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            
 
         }
 
