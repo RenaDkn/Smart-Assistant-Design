@@ -33,6 +33,7 @@ namespace Smart_Assistant_Design
             this.smart_broom = new System.Windows.Forms.Button();
             this.ShoeRackButton = new System.Windows.Forms.Button();
             this.daily_plan = new System.Windows.Forms.Button();
+            this.smart_pet_feeder = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SmartLights
@@ -42,7 +43,7 @@ namespace Smart_Assistant_Design
             this.SmartLights.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.SmartLights.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.SmartLights.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.SmartLights.Location = new System.Drawing.Point(36, 134);
+            this.SmartLights.Location = new System.Drawing.Point(23, 134);
             this.SmartLights.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SmartLights.Name = "SmartLights";
             this.SmartLights.Size = new System.Drawing.Size(108, 53);
@@ -56,7 +57,7 @@ namespace Smart_Assistant_Design
             this.smart_broom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.smart_broom.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smart_broom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.smart_broom.Location = new System.Drawing.Point(165, 134);
+            this.smart_broom.Location = new System.Drawing.Point(152, 134);
             this.smart_broom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.smart_broom.Name = "smart_broom";
             this.smart_broom.Size = new System.Drawing.Size(108, 53);
@@ -70,34 +71,51 @@ namespace Smart_Assistant_Design
             this.ShoeRackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ShoeRackButton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.ShoeRackButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ShoeRackButton.Location = new System.Drawing.Point(488, 134);
+            this.ShoeRackButton.Location = new System.Drawing.Point(580, 134);
             this.ShoeRackButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ShoeRackButton.Name = "ShoeRackButton";
             this.ShoeRackButton.Size = new System.Drawing.Size(108, 53);
             this.ShoeRackButton.TabIndex = 2;
             this.ShoeRackButton.Text = "SmartShoeRack";
             this.ShoeRackButton.UseVisualStyleBackColor = true;
-            this.ShoeRackButton.Click += new System.EventHandler(this.ShoeRackButton_Click);
+            this.ShoeRackButton.Click += new System.EventHandler(this.shoeRackButton_click);
             // 
             // daily_plan
             // 
             this.daily_plan.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.daily_plan.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.daily_plan.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.daily_plan.Location = new System.Drawing.Point(318, 134);
+            this.daily_plan.Location = new System.Drawing.Point(292, 134);
             this.daily_plan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.daily_plan.Name = "daily_plan";
             this.daily_plan.Size = new System.Drawing.Size(108, 53);
             this.daily_plan.TabIndex = 3;
             this.daily_plan.Text = "Daily Plan";
             this.daily_plan.UseVisualStyleBackColor = true;
-            this.daily_plan.Click += new System.EventHandler(this.daily_plan_Click);
+            this.daily_plan.Click += new System.EventHandler(this.daily_plan_click);
+            // 
+            // smart_pet_feeder
+            // 
+            this.smart_pet_feeder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.smart_pet_feeder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.smart_pet_feeder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.smart_pet_feeder.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smart_pet_feeder.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.smart_pet_feeder.Location = new System.Drawing.Point(437, 134);
+            this.smart_pet_feeder.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.smart_pet_feeder.Name = "smart_pet_feeder";
+            this.smart_pet_feeder.Size = new System.Drawing.Size(108, 53);
+            this.smart_pet_feeder.TabIndex = 4;
+            this.smart_pet_feeder.Text = "Smart Pet feeder";
+            this.smart_pet_feeder.UseVisualStyleBackColor = true;
+            this.smart_pet_feeder.Click += new System.EventHandler(this.smart_pet_feeder_click);
             // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.smart_pet_feeder);
             this.Controls.Add(this.daily_plan);
             this.Controls.Add(this.ShoeRackButton);
             this.Controls.Add(this.smart_broom);
@@ -116,6 +134,7 @@ namespace Smart_Assistant_Design
         private System.Windows.Forms.Button smart_broom;
         private System.Windows.Forms.Button ShoeRackButton;
         private System.Windows.Forms.Button daily_plan;
+        private System.Windows.Forms.Button smart_pet_feeder;
     }
 }
 
