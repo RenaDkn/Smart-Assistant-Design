@@ -34,6 +34,7 @@ namespace Smart_Assistant_Design
             this.ShoeRackButton = new System.Windows.Forms.Button();
             this.daily_plan = new System.Windows.Forms.Button();
             this.smart_pet_feeder = new System.Windows.Forms.Button();
+            this.help_btn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SmartLights
@@ -110,11 +111,26 @@ namespace Smart_Assistant_Design
             this.smart_pet_feeder.UseVisualStyleBackColor = true;
             this.smart_pet_feeder.Click += new System.EventHandler(this.smart_pet_feeder_click);
             // 
+            // help_btn
+            // 
+            this.help_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.help_btn.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.help_btn.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.help_btn.Location = new System.Drawing.Point(605, 11);
+            this.help_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.help_btn.Name = "help_btn";
+            this.help_btn.Size = new System.Drawing.Size(83, 40);
+            this.help_btn.TabIndex = 5;
+            this.help_btn.Text = "help";
+            this.help_btn.UseVisualStyleBackColor = true;
+            this.help_btn.Click += new System.EventHandler(this.help_btn_Click);
+            // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 338);
+            this.Controls.Add(this.help_btn);
             this.Controls.Add(this.smart_pet_feeder);
             this.Controls.Add(this.daily_plan);
             this.Controls.Add(this.ShoeRackButton);
@@ -135,6 +151,7 @@ namespace Smart_Assistant_Design
         private System.Windows.Forms.Button ShoeRackButton;
         private System.Windows.Forms.Button daily_plan;
         private System.Windows.Forms.Button smart_pet_feeder;
+        private System.Windows.Forms.Button help_btn;
     }
 }
 

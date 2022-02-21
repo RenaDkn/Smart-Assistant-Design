@@ -12,6 +12,7 @@ using Smart_Assistant_Design.smart_broom;
 using Smart_Assistant_Design.smart_shoe_rack;
 using Smart_Assistant_Design.daily_plan;
 using Smart_Assistant_Design.samrt_pet_feeder;
+using Smart_Assistant_Design.help;
 
 namespace Smart_Assistant_Design
 {
@@ -48,6 +49,8 @@ namespace Smart_Assistant_Design
             daily_plan.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             smart_pet_feeder.BackColor = Color.FromArgb(3, 88, 140);
             smart_pet_feeder.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            help_btn.BackColor = Color.FromArgb(3, 88, 140);
+            help_btn.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void shoeRackButton_click(object sender, EventArgs e)
@@ -63,6 +66,11 @@ namespace Smart_Assistant_Design
         private void smart_pet_feeder_click(object sender, EventArgs e)
         {
             new Smart_Pet_Feeder().Show();
+        }
+
+        private void help_btn_Click(object sender, EventArgs e)
+        {
+            new Help_Docs();
         }
     }
 }
