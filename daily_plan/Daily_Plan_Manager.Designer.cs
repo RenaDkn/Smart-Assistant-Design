@@ -52,6 +52,7 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             // add_event
             // 
+            this.add_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_event.ForeColor = System.Drawing.SystemColors.Window;
             this.add_event.Location = new System.Drawing.Point(150, 351);
@@ -64,6 +65,7 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             // delete_event
             // 
+            this.delete_event.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.delete_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.delete_event.ForeColor = System.Drawing.SystemColors.Window;
             this.delete_event.Location = new System.Drawing.Point(495, 351);
@@ -173,7 +175,7 @@ namespace Smart_Assistant_Design.daily_plan
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.calendar);
             this.Name = "Daily_Plan_Manager";
-            this.Text = "Form1";
+            this.Text = "Daily Plan";
             this.ResumeLayout(false);
             this.PerformLayout();
 
