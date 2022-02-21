@@ -20,6 +20,8 @@ namespace Smart_Assistant_Design.smart_shoe_rack
         private void EditShoeRack_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(217, 187, 160);
+            exit_button.BackColor = Color.FromArgb(3, 88, 140);
+            exit_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             image_button.BackColor = Color.FromArgb(3, 88, 140);
             image_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             execute_button.BackColor = Color.FromArgb(3, 88, 140);
@@ -31,7 +33,13 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             if (execute == "watch")
             {
                 image_button.Visible = false;
-                
+                image_button.Enabled = false;
+                image_label.Visible = false;
+                execute_button.Enabled = false;
+                execute_button.Visible = false;
+                index_label.Visible = false;
+                index_textBox.Enabled = false;
+                index_textBox.Visible = false;
 
             }else if (execute == "search")
             {
@@ -42,16 +50,22 @@ namespace Smart_Assistant_Design.smart_shoe_rack
                 index_label.Visible = false;
                 index_textBox.Enabled = false;
                 index_textBox.Visible = false;
-                
-
-
             }
             else if (execute == "delete")
             {
+                image_button.Visible = false;
+                image_button.Enabled = false;
+                image_label.Visible = false;
+                execute_button.Text = "Delete";
+                index_label.Visible = false;
+                index_textBox.Enabled = false;
+                index_textBox.Visible = false;
+
 
             }
             else
             {
+                execute_button.Text = "Insert";
 
             }
         }

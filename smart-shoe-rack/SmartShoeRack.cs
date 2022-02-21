@@ -30,18 +30,21 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             delete_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             insert_button.BackColor = Color.FromArgb(3, 88, 140);
             insert_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
-           
+            find_button.BackColor = Color.FromArgb(3, 88, 140);
+            find_button.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+
         }
 
-        private void Exitbutton_Click(object sender, EventArgs e)
+        private void find_button_Click(object sender, EventArgs e)
         {
-
+            ex = "find";
+            new WatchAllShoes(ex).Show();
         }
 
         private void allshoes_button_Click(object sender, EventArgs e)
         {
             ex = "watch";
-            new EditShoeRack(ex).Show();
+            new WatchAllShoes(ex).Show();
         }
 
         private void search_button_Click(object sender, EventArgs e)

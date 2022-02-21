@@ -34,6 +34,7 @@
             this.search_button = new System.Windows.Forms.Button();
             this.delete_button = new System.Windows.Forms.Button();
             this.insert_button = new System.Windows.Forms.Button();
+            this.find_button = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // Exitbutton
@@ -48,7 +49,7 @@
             this.Exitbutton.TabIndex = 0;
             this.Exitbutton.Text = "Exit";
             this.Exitbutton.UseVisualStyleBackColor = true;
-            this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
+            this.Exitbutton.Click += new System.EventHandler(this.find_button_Click);
             // 
             // allshoes_button
             // 
@@ -102,6 +103,20 @@
             this.insert_button.UseVisualStyleBackColor = true;
             this.insert_button.Click += new System.EventHandler(this.insert_button_Click);
             // 
+            // find_button
+            // 
+            this.find_button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.find_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.find_button.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.find_button.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.find_button.Location = new System.Drawing.Point(627, 25);
+            this.find_button.Name = "find_button";
+            this.find_button.Size = new System.Drawing.Size(126, 56);
+            this.find_button.TabIndex = 0;
+            this.find_button.Text = "Find proper shoes";
+            this.find_button.UseVisualStyleBackColor = true;
+            this.find_button.Click += new System.EventHandler(this.find_button_Click);
+            // 
             // SmartShoeRack
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -109,6 +124,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.find_button);
             this.Controls.Add(this.insert_button);
             this.Controls.Add(this.delete_button);
             this.Controls.Add(this.search_button);
@@ -130,5 +146,6 @@
         private System.Windows.Forms.Button Insert;
         private System.Windows.Forms.Button allshoes_button;
         private System.Windows.Forms.Button insert_button;
+        private System.Windows.Forms.Button find_button;
     }
 }
