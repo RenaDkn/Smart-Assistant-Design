@@ -7,9 +7,16 @@ using System.Drawing;
 
 namespace Smart_Assistant_Design.smart_broom
 {
+    enum DB_action
+    {
+        ADD,
+        REMOVE
+    }
+
     public partial class Smart_Broom_Control : Form
     {
         private Smart_Broom smart_broom;
+        private DB_action action;
 
         public Smart_Broom_Control()
         {
@@ -24,8 +31,8 @@ namespace Smart_Assistant_Design.smart_broom
             this.add_room.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             this.remove_room.BackColor = Color.FromArgb(3, 88, 140);
             this.remove_room.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
-            this.add_room_input.BackColor = Color.FromArgb(3, 88, 140);
-            this.add_room_input.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.add_rm_room_input.BackColor = Color.FromArgb(3, 88, 140);
+            this.add_rm_room_input.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void refresh_control_panel()
@@ -106,7 +113,7 @@ namespace Smart_Assistant_Design.smart_broom
 
         private void task_queue_add_room(object sender, ItemCheckEventArgs e)
         {
-            // If uncheck remove from queue.
+            /*// If uncheck remove from queue.
             if (((CheckedListBox) sender).GetItemCheckState(e.Index) == CheckState.Unchecked)
             {
                 foreach (Room_To_Clean curr_room in
@@ -116,7 +123,7 @@ namespace Smart_Assistant_Design.smart_broom
                         smart_broom.get_rooms_to_clean().ToList<Room_To_Clean>().Remove(curr_room);
                 }
                 return;
-            }
+            }*/
 
             smart_broom.get_rooms_to_clean().Enqueue(
                 new Room_To_Clean(
@@ -126,29 +133,60 @@ namespace Smart_Assistant_Design.smart_broom
             );
         }
 
-        private void add_room_click(object sender, EventArgs e)
+        private void show_input_fields()
         {
-            this.add_room_input.Visible = true;
+            this.add_rm_room_input.Visible = true;
             this.add_remove_label.Visible = true;
-            this.add_room_input.Visible = true;
+            this.add_rm_room_input.Visible = true;
+            this.room_change.Visible = true;
         }
 
         private void hide_input_fields()
         {
-            this.add_room_input.Visible = false;
+            this.add_rm_room_input.Visible = false;
             this.add_remove_label.Visible = false;
-            this.add_room_input.Visible = false;
+            this.add_rm_room_input.Visible = false;
+            this.room_change.Visible = false;
         }
 
-        private void room_change_enter(object sender, EventArgs e)
+        private void add_room_click(object sender, EventArgs e)
         {
-            // TODO - Make it work on enter. Save the room.
-            hide_input_fields();
+            show_input_fields();
+            add_remove_label.Text = "add new room:";
+            add_rm_room_input.Text = "add";
+            action = DB_action.ADD;
         }
 
-        private void add_room_input_click(object sender, EventArgs e)
+        private void remove_room_Click(object sender, EventArgs e)
         {
-            
+            show_input_fields();
+            add_remove_label.Text = "remove room:";
+            add_rm_room_input.Text = "remove";
+            action = DB_action.REMOVE;
         }
+
+        private void add_room_to_db(String room_name)
+        {
+            // TODO - Add room to db.
+        }
+
+        private void remove_room_from_db(String room_name)
+        {
+            // TODO - Remove room from db.
+        }
+
+        private void add_rm_room_input_click(object sender, EventArgs e)
+        {
+            if (room_change.Text == "")
+            {
+                MessageBox.Show("The field is empty!");
+                return;
+            }
+            if (action == DB_action.ADD)
+                add_room_to_db(room_change.Text);
+            else
+                remove_room_from_db(room_change.Text);
+        }
+        
     }
 }
