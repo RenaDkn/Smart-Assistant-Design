@@ -32,7 +32,6 @@ namespace Smart_Assistant_Design.daily_plan
             this.calendar = new System.Windows.Forms.MonthCalendar();
             this.add_event = new System.Windows.Forms.Button();
             this.delete_event = new System.Windows.Forms.Button();
-            this.search_event = new System.Windows.Forms.Button();
             this.event_name_field = new System.Windows.Forms.TextBox();
             this.date_pick_field = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
@@ -55,34 +54,25 @@ namespace Smart_Assistant_Design.daily_plan
             // 
             this.add_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_event.ForeColor = System.Drawing.SystemColors.Window;
-            this.add_event.Location = new System.Drawing.Point(51, 351);
+            this.add_event.Location = new System.Drawing.Point(150, 351);
             this.add_event.Name = "add_event";
             this.add_event.Size = new System.Drawing.Size(113, 63);
             this.add_event.TabIndex = 1;
             this.add_event.Text = "Add event";
             this.add_event.UseVisualStyleBackColor = true;
+            this.add_event.Click += new System.EventHandler(this.add_event_click);
             // 
             // delete_event
             // 
             this.delete_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.delete_event.ForeColor = System.Drawing.SystemColors.Window;
-            this.delete_event.Location = new System.Drawing.Point(329, 351);
+            this.delete_event.Location = new System.Drawing.Point(495, 351);
             this.delete_event.Name = "delete_event";
             this.delete_event.Size = new System.Drawing.Size(113, 63);
             this.delete_event.TabIndex = 2;
             this.delete_event.Text = "Delete event";
             this.delete_event.UseVisualStyleBackColor = true;
-            // 
-            // search_event
-            // 
-            this.search_event.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.search_event.ForeColor = System.Drawing.SystemColors.Window;
-            this.search_event.Location = new System.Drawing.Point(621, 351);
-            this.search_event.Name = "search_event";
-            this.search_event.Size = new System.Drawing.Size(113, 63);
-            this.search_event.TabIndex = 3;
-            this.search_event.Text = "Search event";
-            this.search_event.UseVisualStyleBackColor = true;
+            this.delete_event.Click += new System.EventHandler(this.delete_event_click);
             // 
             // event_name_field
             // 
@@ -179,7 +169,6 @@ namespace Smart_Assistant_Design.daily_plan
             this.Controls.Add(this.label1);
             this.Controls.Add(this.date_pick_field);
             this.Controls.Add(this.event_name_field);
-            this.Controls.Add(this.search_event);
             this.Controls.Add(this.delete_event);
             this.Controls.Add(this.add_event);
             this.Controls.Add(this.calendar);
@@ -195,7 +184,6 @@ namespace Smart_Assistant_Design.daily_plan
         private System.Windows.Forms.MonthCalendar calendar;
         private System.Windows.Forms.Button add_event;
         private System.Windows.Forms.Button delete_event;
-        private System.Windows.Forms.Button search_event;
         private System.Windows.Forms.TextBox event_name_field;
         private System.Windows.Forms.DateTimePicker date_pick_field;
         private System.Windows.Forms.Label label1;

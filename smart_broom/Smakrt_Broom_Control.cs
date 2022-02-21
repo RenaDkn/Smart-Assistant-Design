@@ -177,7 +177,7 @@ namespace Smart_Assistant_Design.smart_broom
 
         private void add_rm_room_input_click(object sender, EventArgs e)
         {
-            if (room_change.Text == "")
+            if (room_change.Text.Equals(""))
             {
                 MessageBox.Show("The field is empty!");
                 return;
