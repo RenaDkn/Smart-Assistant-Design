@@ -40,6 +40,7 @@ namespace Smart_Assistant_Design.samrt_pet_feeder
             this.camera = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.bowl_timer = new System.Windows.Forms.Timer(this.components);
+            this.exit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.camera)).BeginInit();
             this.SuspendLayout();
             // 
@@ -153,11 +154,24 @@ namespace Smart_Assistant_Design.samrt_pet_feeder
             this.bowl_timer.Interval = 5000;
             this.bowl_timer.Tick += new System.EventHandler(this.bowl_timer_tick);
             // 
+            // exit
+            // 
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exit.ForeColor = System.Drawing.SystemColors.Window;
+            this.exit.Location = new System.Drawing.Point(12, 9);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(82, 41);
+            this.exit.TabIndex = 21;
+            this.exit.Text = "exit";
+            this.exit.UseVisualStyleBackColor = true;
+            // 
             // Smart_Pet_Feeder
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.camera);
             this.Controls.Add(this.sheduled_feeder_label);
@@ -187,5 +201,6 @@ namespace Smart_Assistant_Design.samrt_pet_feeder
         private System.Windows.Forms.PictureBox camera;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer bowl_timer;
+        private System.Windows.Forms.Button exit;
     }
 }

@@ -40,6 +40,7 @@ namespace Smart_Assistant_Design.daily_plan
             this.label4 = new System.Windows.Forms.Label();
             this.event_type_field = new System.Windows.Forms.ComboBox();
             this.time_pick_field = new System.Windows.Forms.DateTimePicker();
+            this.exit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // calendar
@@ -158,11 +159,24 @@ namespace Smart_Assistant_Design.daily_plan
             this.time_pick_field.TabIndex = 12;
             this.time_pick_field.Value = new System.DateTime(2022, 2, 14, 0, 0, 0, 0);
             // 
+            // exit
+            // 
+            this.exit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.exit.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.exit.ForeColor = System.Drawing.SystemColors.Window;
+            this.exit.Location = new System.Drawing.Point(12, 12);
+            this.exit.Name = "exit";
+            this.exit.Size = new System.Drawing.Size(82, 41);
+            this.exit.TabIndex = 21;
+            this.exit.Text = "exit";
+            this.exit.UseVisualStyleBackColor = true;
+            // 
             // Daily_Plan_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.exit);
             this.Controls.Add(this.time_pick_field);
             this.Controls.Add(this.event_type_field);
             this.Controls.Add(this.label4);
@@ -194,5 +208,6 @@ namespace Smart_Assistant_Design.daily_plan
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox event_type_field;
         private System.Windows.Forms.DateTimePicker time_pick_field;
+        private System.Windows.Forms.Button exit;
     }
 }

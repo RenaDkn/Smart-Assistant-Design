@@ -33,6 +33,8 @@ namespace Smart_Assistant_Design.smart_broom
             this.remove_room.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             this.add_rm_room_input.BackColor = Color.FromArgb(3, 88, 140);
             this.add_rm_room_input.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.exit.BackColor = Color.FromArgb(3, 88, 140);
+            this.exit.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void refresh_control_panel()

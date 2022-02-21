@@ -21,6 +21,8 @@ namespace Smart_Assistant_Design.samrt_pet_feeder
             this.sheduled_feed.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             this.watch_mode.BackColor = Color.FromArgb(3, 88, 140);
             this.watch_mode.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.exit.BackColor = Color.FromArgb(3, 88, 140);
+            this.exit.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void sheduled_feed_click(object sender, EventArgs e)

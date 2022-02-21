@@ -17,6 +17,8 @@ namespace Smart_Assistant_Design.daily_plan
             this.add_event.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
             this.delete_event.BackColor = Color.FromArgb(3, 88, 140);
             this.delete_event.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            this.exit.BackColor = Color.FromArgb(3, 88, 140);
+            this.exit.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
