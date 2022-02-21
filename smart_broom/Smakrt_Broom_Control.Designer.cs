@@ -120,6 +120,9 @@ namespace Smart_Assistant_Design.smart_broom
             this.available_rooms.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.available_rooms.ForeColor = System.Drawing.SystemColors.WindowText;
             this.available_rooms.FormattingEnabled = true;
+            this.available_rooms.Items.AddRange(new object[] {
+            "Living room",
+            "Bed room"});
             this.available_rooms.Location = new System.Drawing.Point(174, 90);
             this.available_rooms.Name = "available_rooms";
             this.available_rooms.Size = new System.Drawing.Size(368, 144);
@@ -139,6 +142,7 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // start_cleaning
             // 
+            this.start_cleaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.start_cleaning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.start_cleaning.ForeColor = System.Drawing.SystemColors.Window;
             this.start_cleaning.Location = new System.Drawing.Point(175, 277);
@@ -151,6 +155,7 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // stop_cleaning
             // 
+            this.stop_cleaning.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.stop_cleaning.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.stop_cleaning.ForeColor = System.Drawing.SystemColors.Window;
             this.stop_cleaning.Location = new System.Drawing.Point(427, 277);
@@ -186,6 +191,7 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // add_room
             // 
+            this.add_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_room.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_room.ForeColor = System.Drawing.SystemColors.Window;
             this.add_room.Location = new System.Drawing.Point(34, 90);
@@ -198,13 +204,14 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // remove_room
             // 
+            this.remove_room.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.remove_room.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.remove_room.ForeColor = System.Drawing.SystemColors.Window;
             this.remove_room.Location = new System.Drawing.Point(34, 170);
             this.remove_room.Name = "remove_room";
             this.remove_room.Size = new System.Drawing.Size(115, 68);
             this.remove_room.TabIndex = 16;
-            this.remove_room.Text = "remove room";
+            this.remove_room.Text = "Remove room";
             this.remove_room.UseVisualStyleBackColor = true;
             this.remove_room.Click += new System.EventHandler(this.remove_room_Click);
             // 
@@ -230,11 +237,12 @@ namespace Smart_Assistant_Design.smart_broom
             // 
             // add_rm_room_input
             // 
+            this.add_rm_room_input.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_rm_room_input.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_rm_room_input.ForeColor = System.Drawing.SystemColors.Window;
-            this.add_rm_room_input.Location = new System.Drawing.Point(456, 15);
+            this.add_rm_room_input.Location = new System.Drawing.Point(456, 10);
             this.add_rm_room_input.Name = "add_rm_room_input";
-            this.add_rm_room_input.Size = new System.Drawing.Size(78, 23);
+            this.add_rm_room_input.Size = new System.Drawing.Size(78, 32);
             this.add_rm_room_input.TabIndex = 19;
             this.add_rm_room_input.Text = "Add room";
             this.add_rm_room_input.UseVisualStyleBackColor = true;
