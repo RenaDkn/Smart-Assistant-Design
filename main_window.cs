@@ -13,6 +13,7 @@ using Smart_Assistant_Design.smart_shoe_rack;
 using Smart_Assistant_Design.daily_plan;
 using Smart_Assistant_Design.samrt_pet_feeder;
 using Smart_Assistant_Design.help;
+using System.Diagnostics;
 
 namespace Smart_Assistant_Design
 {
@@ -27,6 +28,7 @@ namespace Smart_Assistant_Design
         private void SmartLights_Click(object sender, EventArgs e)
         {
             Chooseroom cr = new Chooseroom();
+
             cr.Show();
             this.Hide();
         }
@@ -70,7 +72,7 @@ namespace Smart_Assistant_Design
 
         private void help_btn_Click(object sender, EventArgs e)
         {
-            new Help_Docs();
+            new Help_Docs().Show();
         }
     }
 }

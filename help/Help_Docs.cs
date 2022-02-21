@@ -29,14 +29,16 @@ namespace Smart_Assistant_Design.help
             exit.BackColor = Color.FromArgb(3, 88, 140);
             exit.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
 
+        }
 
-            Process process = new Process();
-            ProcessStartInfo startInfo = new ProcessStartInfo();
-            process.StartInfo = startInfo;
-            //startInfo.Arguments = "/A "page = N"";
-            startInfo.FileName = @"C:\Users\rounnus\Documents\github\Smart-Assistant-Design\Resources\help pdfs\Εγχειρίδιο αναλυτικής αναφοράς.pdf";
-            process.Start();
+        private void open_pdf(String pdf_name)
+        {
+            Process pdf_proc = new Process();
 
+            pdf_proc.StartInfo = new ProcessStartInfo(pdf_name);
+            pdf_proc.StartInfo.UseShellExecute = true;
+
+            pdf_proc.Start();
         }
 
         private void Help_Load(object sender, EventArgs e)
@@ -46,27 +48,27 @@ namespace Smart_Assistant_Design.help
 
         private void smart_pet_feeder_btn_Click(object sender, EventArgs e)
         {
-
+            open_pdf(@"..\..\..\Resources\help pdfs\smart_feeder.pdf");
         }
 
         private void smart_lights_btn_Click(object sender, EventArgs e)
         {
-
+            open_pdf(@"..\..\..\Resources\help pdfs\smart_lights.pdf");
         }
 
         private void smart_broom_btn_Click(object sender, EventArgs e)
         {
-
+            open_pdf(@"..\..\..\Resources\help pdfs\smart_broom.pdf");
         }
 
         private void smart_shoe_rack_btn_Click(object sender, EventArgs e)
         {
-
+            open_pdf(@"..\..\..\Resources\help pdfs\smart_shoe_rack.pdf");
         }
 
         private void daily_plan_btn_Click(object sender, EventArgs e)
         {
-
+            open_pdf(@"..\..\..\Resources\help pdfs\daily_plan.pdf");
         }
     }
 }
