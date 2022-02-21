@@ -11,7 +11,7 @@ namespace Smart_Assistant_Design.db
        
         public static void establishe_connection() 
         {
-            string connectionString = @"Data Source=C:\Users\Rena Dikonimaki\Documents\GitHub\Smart-Assistant-Design\database\;Version=3;";
+            string connectionString = @"Data Source=C: \Users\Rena Dikonimaki\Documents\GitHub\Smart-Assistant-Design\database\;Version=3;";
         
             try
             {

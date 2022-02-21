@@ -22,13 +22,13 @@ namespace Smart_Assistant_Design.smart_lights
 
         private void livingroom_Click(object sender, EventArgs e)
         {
-            string query = "SELECT * FROM Rooms WHERE RoomName='livingroom'";
+            //string query = "SELECT * FROM Rooms WHERE RoomName='livingroom'";
             room = "livingroom";
-            SqliteCommand command = new SqliteCommand(query, Database.get_connection());
-            Database.establishe_connection();
-            SqliteDataReader reader = command.ExecuteReader();
-            MessageBox.Show(reader.GetValue(0).ToString());
-            Database.close_connection();
+            //SqliteCommand command = new SqliteCommand(query, Database.get_connection());
+           // Database.establishe_connection();
+            //SqliteDataReader reader = command.ExecuteReader();
+           // MessageBox.Show(reader.GetValue(0).ToString());
+            //Database.close_connection();
             var room1 = new Roomclass();
             room1.SetRoom(room);
             room1.SetLights("off");

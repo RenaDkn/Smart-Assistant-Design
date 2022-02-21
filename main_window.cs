@@ -39,6 +39,10 @@ namespace Smart_Assistant_Design
             this.BackColor = Color.FromArgb(217, 187, 160);
             SmartLights.BackColor = Color.FromArgb(3, 88, 140);
             SmartLights.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            smart_broom.BackColor = Color.FromArgb(3, 88, 140);
+            smart_broom.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+            ShoeRackButton.BackColor = Color.FromArgb(3, 88, 140);
+            ShoeRackButton.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
         private void ShoeRackButton_Click(object sender, EventArgs e)

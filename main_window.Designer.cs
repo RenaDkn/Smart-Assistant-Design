@@ -51,7 +51,8 @@ namespace Smart_Assistant_Design
             // 
             // smart_broom
             // 
-            this.smart_broom.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.smart_broom.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.smart_broom.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.smart_broom.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.smart_broom.Location = new System.Drawing.Point(301, 179);
             this.smart_broom.Name = "smart_broom";
@@ -63,6 +64,9 @@ namespace Smart_Assistant_Design
             // 
             // ShoeRackButton
             // 
+            this.ShoeRackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ShoeRackButton.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.ShoeRackButton.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.ShoeRackButton.Location = new System.Drawing.Point(520, 179);
             this.ShoeRackButton.Name = "ShoeRackButton";
             this.ShoeRackButton.Size = new System.Drawing.Size(123, 71);
