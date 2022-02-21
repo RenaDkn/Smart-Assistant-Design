@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Smart_Assistant_Design.smart_lights;
 using Smart_Assistant_Design.smart_broom;
+using Smart_Assistant_Design.smart_shoe_rack;
 
 namespace Smart_Assistant_Design
 {
@@ -38,6 +39,11 @@ namespace Smart_Assistant_Design
             this.BackColor = Color.FromArgb(217, 187, 160);
             SmartLights.BackColor = Color.FromArgb(3, 88, 140);
             SmartLights.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
+        }
+
+        private void ShoeRackButton_Click(object sender, EventArgs e)
+        {
+            new SmartShoeRack().Show();
         }
     }
 }

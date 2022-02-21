@@ -31,7 +31,7 @@ namespace Smart_Assistant_Design
         {
             this.SmartLights = new System.Windows.Forms.Button();
             this.smart_broom = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ShoeRackButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // SmartLights
@@ -61,22 +61,22 @@ namespace Smart_Assistant_Design
             this.smart_broom.UseVisualStyleBackColor = true;
             this.smart_broom.Click += new System.EventHandler(this.smart_broom_Click);
             // 
-            // button1
+            // ShoeRackButton
             // 
-            this.button1.Location = new System.Drawing.Point(505, 179);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(123, 71);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Smart shoe rack";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.smart_broom_Click);
+            this.ShoeRackButton.Location = new System.Drawing.Point(520, 179);
+            this.ShoeRackButton.Name = "ShoeRackButton";
+            this.ShoeRackButton.Size = new System.Drawing.Size(123, 71);
+            this.ShoeRackButton.TabIndex = 2;
+            this.ShoeRackButton.Text = "SmartShoeRack";
+            this.ShoeRackButton.UseVisualStyleBackColor = true;
+            this.ShoeRackButton.Click += new System.EventHandler(this.ShoeRackButton_Click);
             // 
             // main_window
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 451);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ShoeRackButton);
             this.Controls.Add(this.smart_broom);
             this.Controls.Add(this.SmartLights);
             this.Name = "main_window";
@@ -90,7 +90,7 @@ namespace Smart_Assistant_Design
 
         private System.Windows.Forms.Button SmartLights;
         private System.Windows.Forms.Button smart_broom;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ShoeRackButton;
     }
 }
 
