@@ -1,5 +1,6 @@
 ﻿BH using Microsoft.Data.Sqlite;
 using Smart_Assistant_Design.daily_plan;
+using Smart_Assistant_Design.smart_lights;
 using System;
 using System.Windows.Forms;
 
@@ -51,6 +52,26 @@ namespace Smart_Assistant_Design.db
             close_connection();
             return lights;
         }
+        public static string return_image(string room)
+        {
+            SqliteCommand command;
+            SqliteDataReader reader;
+            String sql = " ";
+            String image = " ";
+            establishe_connection();
+            command = new SqliteCommand(sql, get_connection());
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                if ((string)reader.GetValue(1) == room)
+                {
+                    image = (string)reader.GetValue(2);
+                }
+            }
+            close_connection();
+            return image;
+        }
+        
         public static Daily_Plan_Type get_plan_type(String plan_name, DateTime date, DateTime time)
         {
             // Use the connection above to get the 

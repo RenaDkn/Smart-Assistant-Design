@@ -13,7 +13,7 @@ namespace Smart_Assistant_Design.smart_lights
     
     public partial class Chooseroom : Form
     {
-        public String room,lights;
+        public String room,lights,image;
         
         public Chooseroom()
         {
@@ -25,20 +25,20 @@ namespace Smart_Assistant_Design.smart_lights
             lights=db.return_lights(room);
             
         }
+        public static void get_image(string room)
+        {
+            Database db = new Database();
+            image = db.return_image(room);
+        }
         private void livingroom_Click(object sender, EventArgs e)
         {
-            //string query = "SELECT * FROM Rooms WHERE RoomName='livingroom'";
             room = "livingroom";
-            //SqliteCommand command = new SqliteCommand(query, Database.get_connection());
-           // Database.establishe_connection();
-            //SqliteDataReader reader = command.ExecuteReader();
-           // MessageBox.Show(reader.GetValue(0).ToString());
-            //Database.close_connection();
             var room1 = new Roomclass();
             room1.SetRoom(room);
             get_lights(room);
             room1.SetLights(lights);
-            room1.SetImage("images/livingroom.jpg");
+            get_image(room);
+            room1.SetImage(image);
             Room rm = new Room(room1);
             rm.Show();
             this.Close();
@@ -49,7 +49,8 @@ namespace Smart_Assistant_Design.smart_lights
             room = "bedroom";
             var room2= new Roomclass();
             room2.SetRoom(room);
-            room2.SetLights("off");
+            get_lights(room);
+            room2.SetLights(lights);
             room2.SetImage("images/bedroom.jpg");
             Room rm = new Room(room2);
             rm.Show();
@@ -61,7 +62,8 @@ namespace Smart_Assistant_Design.smart_lights
             room = "kitchen";
             var room3 = new Roomclass();
             room3.SetRoom(room);
-            room3.SetLights("off");
+            get_lights(room);
+            room3.SetLights(lights);
             room3.SetImage("images/kitchen.jpg");
             Room rm = new Room(room3);
             rm.Show();
@@ -73,7 +75,8 @@ namespace Smart_Assistant_Design.smart_lights
             room = "bathroom";
             var room4 = new Roomclass();
             room4.SetRoom(room);
-            room4.SetLights("off");
+            get_lights(room);
+            room4.SetLights(lights);
             room4.SetImage("images/bathroom.jpg");
             Room rm = new Room(room4);
             rm.Show();
