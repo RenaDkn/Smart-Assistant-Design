@@ -51,6 +51,7 @@ namespace Smart_Assistant_Design.smart_lights
                 this.BackgroundImage = Image.FromFile("images/" + r1.GetRoom()+ "ON.jpg");
                 infotext.Text = "The " + r1.GetRoom() + "'s lights are ON!";
                 swapligthsbutton.Text = "Close";
+             
             }
             else
             {

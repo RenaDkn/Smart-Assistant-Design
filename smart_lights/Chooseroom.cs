@@ -13,13 +13,18 @@ namespace Smart_Assistant_Design.smart_lights
     
     public partial class Chooseroom : Form
     {
-        public String room;
+        public String room,lights;
         
         public Chooseroom()
         {
             InitializeComponent();           
         }
-
+        public static void get_lights(string room)
+        {
+            Database db = new Database();
+            lights=db.return_lights(room);
+            
+        }
         private void livingroom_Click(object sender, EventArgs e)
         {
             //string query = "SELECT * FROM Rooms WHERE RoomName='livingroom'";
@@ -31,7 +36,8 @@ namespace Smart_Assistant_Design.smart_lights
             //Database.close_connection();
             var room1 = new Roomclass();
             room1.SetRoom(room);
-            room1.SetLights("off");
+            get_lights(room);
+            room1.SetLights(lights);
             room1.SetImage("images/livingroom.jpg");
             Room rm = new Room(room1);
             rm.Show();

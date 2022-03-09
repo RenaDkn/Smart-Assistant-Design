@@ -15,11 +15,12 @@ using Smart_Assistant_Design.samrt_pet_feeder;
 using Smart_Assistant_Design.help;
 using System.Diagnostics;
 
+
 namespace Smart_Assistant_Design
 {
     public partial class main_window : Form
     {
-        
+       
         public main_window()
         {
             InitializeComponent();
@@ -28,7 +29,6 @@ namespace Smart_Assistant_Design
         private void SmartLights_Click(object sender, EventArgs e)
         {
             Chooseroom cr = new Chooseroom();
-
             cr.Show();
             this.Hide();
         }

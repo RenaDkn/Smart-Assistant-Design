@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.Sqlite;
+﻿BH using Microsoft.Data.Sqlite;
 using Smart_Assistant_Design.daily_plan;
 using System;
 using System.Windows.Forms;
@@ -32,7 +32,25 @@ namespace Smart_Assistant_Design.db
         {
             return Database.conn;
         }
-
+        public static string return_lights(string room)
+        {
+            SqliteCommand command ;
+            SqliteDataReader reader;
+            String sql = " ";
+            String lights=" ";
+            establishe_connection();
+            command = new SqliteCommand(sql, get_connection());
+            reader = command.ExecuteReader();
+            while (reader.Read())
+            {
+                if ((string)reader.GetValue(1) == room)
+                {
+                    lights = (string)reader.GetValue(3);
+                }
+            }
+            close_connection();
+            return lights;
+        }
         public static Daily_Plan_Type get_plan_type(String plan_name, DateTime date, DateTime time)
         {
             // Use the connection above to get the 
