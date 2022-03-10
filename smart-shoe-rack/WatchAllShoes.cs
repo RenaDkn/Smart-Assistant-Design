@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smart_Assistant_Design.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,16 +11,24 @@ namespace Smart_Assistant_Design.smart_shoe_rack
 {
     public partial class WatchAllShoes : Form
     {
-        string execute;
-        int image;
-        
+        string execute,nicknameSearch,attributesSearch;
+        int count;
+        Shoes obj_shoes;
+
         public WatchAllShoes(string ex)
         {
             InitializeComponent();
             execute=ex;
         }
+        public WatchAllShoes(string ex,string nickname,string attributes)
+        {
+            InitializeComponent();
+            execute = ex;
+            nicknameSearch = nickname;
+            attributesSearch = attributes;
+        }
 
-      
+
 
         private void WatchAllShoes_Load(object sender, EventArgs e)
         {
@@ -46,67 +55,106 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             }
             else if (execute == "watch")
             {
+
+                obj_shoes = new Shoes();
+                count = 1;
+                obj_shoes = Database.watch_next_shoes(count);
                 prev_button.Enabled = true;
                 prev_button.Visible = true;
                 next_button.Enabled = true;
                 next_button.Visible = true;
-
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes1.jpg");
-                image = 1;
+                try
+                {
+                    pictureBox1.Image = Image.FromFile("../../../Resources/shoes/" + obj_shoes.GetImage());
+                }catch(Exception)
+                {
+                    pictureBox1.Visible = false;
+                }
+                nickname_label.Text = "Nickname:" + obj_shoes.GetNickname().ToString();
+                index_label.Text = "Index:" + obj_shoes.GetIndex().ToString();
+                attributes_label.Text = "Attributes:" + obj_shoes.GetAttributes().ToString();
             }
-            else
+            else if (execute=="search")
             {
+                next_button.Enabled = false;
+                next_button.Visible = false;
+                prev_button.Enabled = false;
+                prev_button.Visible = false;
+                info_label.Visible = true;
+                count=Database.search_shoes(nicknameSearch, attributesSearch);
+                obj_shoes = new Shoes();
+                obj_shoes = Database.watch_next_shoes(count);
+                if (obj_shoes.GetNickname() == null)
+                {
+                    pictureBox1.Visible = false;
+                    nickname_label.Visible = false;
+                    index_label.Visible = false;
+                    attributes_label.Visible = false;
+                    info_label.Text = "Τα παπούτσια δεν βρέθηκαν!";
 
+                }
+                else
+                {
+                    try
+                    {
+                        pictureBox1.Image = Image.FromFile("../../../Resources/shoes/" + obj_shoes.GetImage());
+                    }
+                    catch (Exception )
+                    {
+                        pictureBox1.Visible = false;
+                    }
+                    nickname_label.Text = "Nickname:" + obj_shoes.GetNickname().ToString();
+                    index_label.Text = "Index:" + obj_shoes.GetIndex().ToString();
+                    attributes_label.Text = "Attributes:" + obj_shoes.GetAttributes().ToString();
+                    info_label.Text = "Τα παπούτσια βρέθηκαν!";
+                }
+               
             }
 
         }
         private void next_button_Click(object sender, EventArgs e)
         {
-      
-            if (image == 1)
+            if (count == 4)
             {
-                image = 2;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes2.png");
-            }
-            else if (image==2)
-            {
-                image = 3;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes"+image+".jpg");
-            }else if (image == 3)
-            {
-                image = 4;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+                count = 1;
             }
             else
             {
-                image = 1;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+                count += 1;
             }
-            
+            obj_shoes = Database.watch_next_shoes(count);
+            pictureBox1.Image = Image.FromFile("../../../Resources/shoes/" + obj_shoes.GetImage());
+            nickname_label.Text = "Nickname:" + obj_shoes.GetNickname().ToString();
+            index_label.Text = "Index:" + obj_shoes.GetIndex().ToString();
+            attributes_label.Text = "Attributes:" + obj_shoes.GetAttributes().ToString();
+        }
+
+        private void exit_button_Click(object sender, EventArgs e)
+        {
+            SmartShoeRack ssr = new SmartShoeRack();
+            ssr.Show();
+            this.Close();
         }
 
         private void prev_button_Click(object sender, EventArgs e)
         {
-            if (image == 1)
+            if (count == 1)
             {
-                image = 4;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
-            }
-            else if (image == 2)
-            {
-                image = 1;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
-            }
-            else if (image == 3)
-            {
-                image = 2;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes2.png");
+                count = 4;
             }
             else
             {
-                image = 3;
-                pictureBox1.Image = Image.FromFile("../../../Resources/shoes/shoes" + image + ".jpg");
+                count = count - 1;
             }
+            obj_shoes = Database.watch_next_shoes(count);
+            pictureBox1.Image = Image.FromFile("../../../Resources/shoes/" + obj_shoes.GetImage());
+            nickname_label.Text = "Nickname" + obj_shoes.GetNickname().ToString();
+            index_label.Text = "Index:" + obj_shoes.GetIndex().ToString();
+            attributes_label.Text = "Attributes:" + obj_shoes.GetAttributes().ToString();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
 
         }
     }   

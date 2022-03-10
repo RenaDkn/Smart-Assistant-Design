@@ -47,6 +47,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // next_button
             // 
@@ -85,6 +86,7 @@
             this.exit_button.TabIndex = 3;
             this.exit_button.Text = "Exit";
             this.exit_button.UseVisualStyleBackColor = true;
+            this.exit_button.Click += new System.EventHandler(this.exit_button_Click);
             // 
             // nickname_label
             // 
@@ -94,9 +96,9 @@
             this.nickname_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.nickname_label.Location = new System.Drawing.Point(171, 311);
             this.nickname_label.Name = "nickname_label";
-            this.nickname_label.Size = new System.Drawing.Size(160, 19);
+            this.nickname_label.Size = new System.Drawing.Size(89, 19);
             this.nickname_label.TabIndex = 4;
-            this.nickname_label.Text = "Nickname: Αθλητικά";
+            this.nickname_label.Text = "Nickname: ";
             // 
             // attributes_label
             // 
@@ -106,9 +108,9 @@
             this.attributes_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.attributes_label.Location = new System.Drawing.Point(171, 404);
             this.attributes_label.Name = "attributes_label";
-            this.attributes_label.Size = new System.Drawing.Size(260, 19);
+            this.attributes_label.Size = new System.Drawing.Size(87, 19);
             this.attributes_label.TabIndex = 5;
-            this.attributes_label.Text = "Attributes: Περπάτημα,Αθλήματα";
+            this.attributes_label.Text = "Attributes:";
             // 
             // index_label
             // 
@@ -117,9 +119,9 @@
             this.index_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.index_label.Location = new System.Drawing.Point(486, 311);
             this.index_label.Name = "index_label";
-            this.index_label.Size = new System.Drawing.Size(67, 19);
+            this.index_label.Size = new System.Drawing.Size(58, 19);
             this.index_label.TabIndex = 6;
-            this.index_label.Text = "Index: 1";
+            this.index_label.Text = "Index: ";
             // 
             // info_label
             // 
@@ -127,7 +129,7 @@
             this.info_label.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.info_label.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.info_label.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.info_label.Location = new System.Drawing.Point(298, 267);
+            this.info_label.Location = new System.Drawing.Point(282, 244);
             this.info_label.Name = "info_label";
             this.info_label.Size = new System.Drawing.Size(201, 19);
             this.info_label.TabIndex = 7;
