@@ -44,9 +44,10 @@ namespace Smart_Assistant_Design.db
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if ((string)reader.GetValue(1) == room)
+                if ((string)reader.GetValue(0) == room)
                 {
-                    lights = (string)reader.GetValue(3);
+                    lights = (string)reader.GetValue(2);
+                    
                 }
             }
             reader.Close();
@@ -64,13 +65,25 @@ namespace Smart_Assistant_Design.db
             reader = command.ExecuteReader();
             while (reader.Read())
             {
-                if ((string)reader.GetValue(1) == room)
+                if ((string)reader.GetValue(0) == room)
                 {
-                    image = (string)reader.GetValue(2);
+                    image = (string)reader.GetValue(1);
                 }
             }
             close_connection();
             return image;
+        }
+        public static void save_lights(string room,string lights)
+        {
+            SQLiteCommand command;
+            String query = "UPDATE Rooms SET Lights=@lights WHERE RoomName=@room ";
+            establishe_connection();
+            command = new SQLiteCommand(query, get_connection());
+            command.Parameters.AddWithValue("@room", room);
+            command.Parameters.AddWithValue("@lights", lights);
+            command.ExecuteReader();
+            close_connection();
+            
         }
         
         public static Daily_Plan_Type get_plan_type(String plan_name, DateTime date, DateTime time)

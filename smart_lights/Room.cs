@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Smart_Assistant_Design.db;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,7 @@ namespace Smart_Assistant_Design.smart_lights
                 this.BackgroundImage = Image.FromFile("images/" + r1.GetRoom()+ "ON.jpg");
                 infotext.Text = "The " + r1.GetRoom() + "'s lights are ON!";
                 swapligthsbutton.Text = "Close";
-             
+                Database.save_lights(r1.GetRoom(), r1.GetLights());
             }
             else
             {
@@ -59,6 +60,7 @@ namespace Smart_Assistant_Design.smart_lights
                 this.BackgroundImage = Image.FromFile("images/" + r1.GetRoom()+ "OFF.jpg");
                 infotext.Text = "The " + r1.GetRoom()+ "'s lights are OFF!";
                 swapligthsbutton.Text = "Open";
+                Database.save_lights(r1.GetRoom().ToString(), r1.GetLights().ToString());
             }
         }
 
