@@ -46,10 +46,10 @@ namespace Smart_Assistant_Design.smart_broom
             this.control_refresh = new System.Windows.Forms.Timer(this.components);
             this.add_room = new System.Windows.Forms.Button();
             this.remove_room = new System.Windows.Forms.Button();
-            this.room_change = new System.Windows.Forms.TextBox();
             this.add_remove_label = new System.Windows.Forms.Label();
             this.add_rm_room_input = new System.Windows.Forms.Button();
             this.exit = new System.Windows.Forms.Button();
+            this.room_change = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // battery_label
@@ -121,9 +121,6 @@ namespace Smart_Assistant_Design.smart_broom
             this.available_rooms.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.available_rooms.ForeColor = System.Drawing.SystemColors.WindowText;
             this.available_rooms.FormattingEnabled = true;
-            this.available_rooms.Items.AddRange(new object[] {
-            "Living room",
-            "Bed room"});
             this.available_rooms.Location = new System.Drawing.Point(174, 90);
             this.available_rooms.Name = "available_rooms";
             this.available_rooms.Size = new System.Drawing.Size(368, 144);
@@ -216,14 +213,6 @@ namespace Smart_Assistant_Design.smart_broom
             this.remove_room.UseVisualStyleBackColor = true;
             this.remove_room.Click += new System.EventHandler(this.remove_room_Click);
             // 
-            // room_change
-            // 
-            this.room_change.Location = new System.Drawing.Point(253, 15);
-            this.room_change.Name = "room_change";
-            this.room_change.Size = new System.Drawing.Size(197, 23);
-            this.room_change.TabIndex = 17;
-            this.room_change.Visible = false;
-            // 
             // add_remove_label
             // 
             this.add_remove_label.AutoSize = true;
@@ -241,7 +230,7 @@ namespace Smart_Assistant_Design.smart_broom
             this.add_rm_room_input.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.add_rm_room_input.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.add_rm_room_input.ForeColor = System.Drawing.SystemColors.Window;
-            this.add_rm_room_input.Location = new System.Drawing.Point(456, 10);
+            this.add_rm_room_input.Location = new System.Drawing.Point(513, 10);
             this.add_rm_room_input.Name = "add_rm_room_input";
             this.add_rm_room_input.Size = new System.Drawing.Size(78, 32);
             this.add_rm_room_input.TabIndex = 19;
@@ -262,16 +251,24 @@ namespace Smart_Assistant_Design.smart_broom
             this.exit.Text = "exit";
             this.exit.UseVisualStyleBackColor = true;
             // 
+            // room_change
+            // 
+            this.room_change.Location = new System.Drawing.Point(296, 16);
+            this.room_change.Name = "room_change";
+            this.room_change.Size = new System.Drawing.Size(211, 23);
+            this.room_change.TabIndex = 21;
+            this.room_change.Visible = false;
+            // 
             // Smart_Broom_Control
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.room_change);
             this.Controls.Add(this.exit);
             this.Controls.Add(this.add_rm_room_input);
             this.Controls.Add(this.add_remove_label);
-            this.Controls.Add(this.room_change);
             this.Controls.Add(this.remove_room);
             this.Controls.Add(this.add_room);
             this.Controls.Add(this.stop_cleaning);
@@ -287,6 +284,7 @@ namespace Smart_Assistant_Design.smart_broom
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.Name = "Smart_Broom_Control";
             this.Text = "Smart Broom Control";
+            this.Load += new System.EventHandler(this.Smart_Broom_Control_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -309,9 +307,9 @@ namespace Smart_Assistant_Design.smart_broom
         private System.Windows.Forms.Timer control_refresh;
         private System.Windows.Forms.Button add_room;
         private System.Windows.Forms.Button remove_room;
-        private System.Windows.Forms.TextBox room_change;
         private System.Windows.Forms.Label add_remove_label;
         private System.Windows.Forms.Button add_rm_room_input;
         private System.Windows.Forms.Button exit;
+        private System.Windows.Forms.TextBox room_change;
     }
 }

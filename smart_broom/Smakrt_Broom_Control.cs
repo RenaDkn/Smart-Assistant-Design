@@ -203,6 +203,21 @@ namespace Smart_Assistant_Design.smart_broom
             else
                 remove_room_from_db(room_change.Text);
         }
-        
+
+        private void Smart_Broom_Control_Load(object sender, EventArgs e)
+        {
+            Database.establishe_connection();
+            String query = "SELECT * FROM SmartBroom";
+            SQLiteCommand insert_c = new SQLiteCommand(query, Database.get_connection());
+            SQLiteDataReader reader = insert_c.ExecuteReader();
+
+            while (reader.Read())
+            {
+                available_rooms.Items.Add((string)reader.GetValue(0));
+            }
+            reader.Close();
+
+            Database.close_connection();
+        }
     }
 }
