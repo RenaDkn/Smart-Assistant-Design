@@ -13,7 +13,7 @@ namespace Smart_Assistant_Design.smart_lights
     
     public partial class Chooseroom : Form
     {
-        public String room,lights,image;
+        public static String room,lights,image;
         
         public Chooseroom()
         {
@@ -21,14 +21,11 @@ namespace Smart_Assistant_Design.smart_lights
         }
         public static void get_lights(string room)
         {
-            Database db = new Database();
-            lights=db.return_lights(room);
-            
+            lights = Database.return_lights(room).ToString(); 
         }
         public static void get_image(string room)
         {
-            Database db = new Database();
-            image = db.return_image(room);
+            image = Database.return_image(room);
         }
         private void livingroom_Click(object sender, EventArgs e)
         {
@@ -51,7 +48,8 @@ namespace Smart_Assistant_Design.smart_lights
             room2.SetRoom(room);
             get_lights(room);
             room2.SetLights(lights);
-            room2.SetImage("images/bedroom.jpg");
+            get_image(room);
+            room2.SetImage(image);
             Room rm = new Room(room2);
             rm.Show();
             this.Close();
@@ -64,7 +62,8 @@ namespace Smart_Assistant_Design.smart_lights
             room3.SetRoom(room);
             get_lights(room);
             room3.SetLights(lights);
-            room3.SetImage("images/kitchen.jpg");
+            get_image(room);
+            room3.SetImage(image);
             Room rm = new Room(room3);
             rm.Show();
             this.Close();
@@ -77,7 +76,8 @@ namespace Smart_Assistant_Design.smart_lights
             room4.SetRoom(room);
             get_lights(room);
             room4.SetLights(lights);
-            room4.SetImage("images/bathroom.jpg");
+            get_image(room);
+            room4.SetImage(image);
             Room rm = new Room(room4);
             rm.Show();
             this.Close();

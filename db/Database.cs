@@ -1,4 +1,4 @@
-﻿BH using Microsoft.Data.Sqlite;
+﻿using System.Data.SQLite;
 using Smart_Assistant_Design.daily_plan;
 using Smart_Assistant_Design.smart_lights;
 using System;
@@ -8,16 +8,16 @@ namespace Smart_Assistant_Design.db
 {
     public class Database
     {
-        private static SqliteConnection conn;
+        private static SQLiteConnection conn;
        
         public static void establishe_connection() 
         {
-            string connectionString = @"Data Source=C: \Users\Rena Dikonimaki\Documents\GitHub\Smart-Assistant-Design\database\;Version=3;";
-        
+            string connectionString = @"Data Source=C:\Users\Rena Dikonimaki\Documents\GitHub\Smart-Assistant-Design\database\database1.db;Version=3;";
             try
             {
-                conn = new SqliteConnection(connectionString);
+                conn = new SQLiteConnection(connectionString);
                 conn.Open();
+                MessageBox.Show("hello");
             }
             catch(Exception e)
             {
@@ -29,18 +29,18 @@ namespace Smart_Assistant_Design.db
         {
             conn.Close();
         }
-        public static SqliteConnection get_connection()
+        public static SQLiteConnection get_connection()
         {
             return Database.conn;
         }
         public static string return_lights(string room)
         {
-            SqliteCommand command ;
-            SqliteDataReader reader;
-            String sql = " ";
+            SQLiteCommand command ;
+            SQLiteDataReader reader;
+            String query = "SELECT * FROM Rooms";
             String lights=" ";
             establishe_connection();
-            command = new SqliteCommand(sql, get_connection());
+            command = new SQLiteCommand(query, get_connection());
             reader = command.ExecuteReader();
             while (reader.Read())
             {
@@ -49,17 +49,18 @@ namespace Smart_Assistant_Design.db
                     lights = (string)reader.GetValue(3);
                 }
             }
+            reader.Close();
             close_connection();
             return lights;
         }
         public static string return_image(string room)
         {
-            SqliteCommand command;
-            SqliteDataReader reader;
-            String sql = " ";
+            SQLiteCommand command;
+            SQLiteDataReader reader;
+            String query = "SELECT * FROM Rooms";
             String image = " ";
             establishe_connection();
-            command = new SqliteCommand(sql, get_connection());
+            command = new SQLiteCommand(query, get_connection());
             reader = command.ExecuteReader();
             while (reader.Read())
             {

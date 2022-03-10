@@ -65,5 +65,12 @@ namespace Smart_Assistant_Design.smart_shoe_rack
             ex = "insert";
             new EditShoeRack(ex).Show();
         }
+
+        private void Exitbutton_Click(object sender, EventArgs e)
+        {
+            main_window mw = new main_window();
+            mw.Show();
+            this.Close();
+        }
     }
 }

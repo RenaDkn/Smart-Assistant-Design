@@ -49,7 +49,7 @@
             this.Exitbutton.TabIndex = 0;
             this.Exitbutton.Text = "Exit";
             this.Exitbutton.UseVisualStyleBackColor = true;
-            this.Exitbutton.Click += new System.EventHandler(this.find_button_Click);
+            this.Exitbutton.Click += new System.EventHandler(this.Exitbutton_Click);
             // 
             // allshoes_button
             // 
