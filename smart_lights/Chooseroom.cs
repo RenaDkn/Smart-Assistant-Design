@@ -104,8 +104,7 @@ namespace Smart_Assistant_Design.smart_lights
 
         private void exitbutton_Click(object sender, EventArgs e)
         {
-            main_window mw = new main_window();
-            mw.Show();
+            new main_window().Show();
             this.Close();
         }
     }

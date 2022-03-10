@@ -66,8 +66,7 @@ namespace Smart_Assistant_Design.smart_lights
 
         private void changeroom_Click(object sender, EventArgs e)
         {
-            Chooseroom cr = new Chooseroom();
-            cr.Show();
+            new Chooseroom().Show();
             this.Close();
         }
 
@@ -85,7 +84,6 @@ namespace Smart_Assistant_Design.smart_lights
             }
             
         }
-
         private void Room_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(217, 187, 160);

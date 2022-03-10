@@ -131,8 +131,7 @@ namespace Smart_Assistant_Design.smart_shoe_rack
 
         private void exit_button_Click(object sender, EventArgs e)
         {
-            SmartShoeRack ssr = new SmartShoeRack();
-            ssr.Show();
+            new SmartShoeRack().Show();
             this.Close();
         }
 

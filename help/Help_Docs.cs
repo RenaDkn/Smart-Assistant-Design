@@ -70,5 +70,11 @@ namespace Smart_Assistant_Design.help
         {
             open_pdf(@"..\..\..\Resources\help pdfs\daily_plan.pdf");
         }
+
+        private void exit_Click(object sender, EventArgs e)
+        {
+            new main_window().Show();
+            this.Close();
+        }
     }
 }

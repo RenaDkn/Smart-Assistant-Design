@@ -25,19 +25,6 @@ namespace Smart_Assistant_Design
         {
             InitializeComponent();
         }
-
-        private void SmartLights_Click(object sender, EventArgs e)
-        {
-            Chooseroom cr = new Chooseroom();
-            cr.Show();
-            this.Hide();
-        }
-
-        private void smart_broom_Click(object sender, EventArgs e)
-        {
-            new Smart_Broom_Control().Show();
-        }
-
         private void main_window_Load(object sender, EventArgs e)
         {
             this.BackColor = Color.FromArgb(217, 187, 160);
@@ -55,24 +42,40 @@ namespace Smart_Assistant_Design
             help_btn.FlatAppearance.BorderColor = Color.FromArgb(9, 38, 64);
         }
 
+        private void SmartLights_Click(object sender, EventArgs e)
+        {
+            new Chooseroom().Show();
+            this.Hide();
+        }
+
+        private void smart_broom_Click(object sender, EventArgs e)
+        {
+            new Smart_Broom_Control().Show();
+            this.Hide();
+        }
+
         private void shoeRackButton_click(object sender, EventArgs e)
         {
             new SmartShoeRack().Show();
+            this.Hide();
         }
 
         private void daily_plan_click(object sender, EventArgs e)
         {
             new Daily_Plan_Manager().Show();
+            this.Hide();
         }
 
         private void smart_pet_feeder_click(object sender, EventArgs e)
         {
             new Smart_Pet_Feeder().Show();
+            this.Hide();
         }
 
         private void help_btn_Click(object sender, EventArgs e)
         {
             new Help_Docs().Show();
+            this.Hide();
         }
     }
 }
