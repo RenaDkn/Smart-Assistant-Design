@@ -13,8 +13,7 @@ namespace Smart_Assistant_Design.smart_shoe_rack
         string ex;
         public SmartShoeRack()
         {
-            InitializeComponent();
-            
+            InitializeComponent();           
         }
 
         private void SmartShoeRack_Load(object sender, EventArgs e)
@@ -40,30 +39,35 @@ namespace Smart_Assistant_Design.smart_shoe_rack
         {
             ex = "find";
             new WatchAllShoes(ex).Show();
+            this.Close();
         }
 
         private void allshoes_button_Click(object sender, EventArgs e)
         {
             ex = "watch";
             new WatchAllShoes(ex).Show();
+            this.Close();
         }
 
         private void search_button_Click(object sender, EventArgs e)
         {
             ex = "search";
             new EditShoeRack(ex).Show();
+            this.Close();
         }
 
         private void delete_button_Click(object sender, EventArgs e)
         {
             ex = "delete";
             new EditShoeRack(ex).Show();
+            this.Close();
         }
 
         private void insert_button_Click(object sender, EventArgs e)
         {
             ex = "insert";
             new EditShoeRack(ex).Show();
+            this.Close();
         }
 
         private void Exitbutton_Click(object sender, EventArgs e)
