@@ -4,6 +4,8 @@ using System;
 using System.Linq;
 using System.Windows.Forms;
 using System.Drawing;
+using System.Data.SQLite;
+using Smart_Assistant_Design.db;
 
 namespace Smart_Assistant_Design.smart_broom
 {
@@ -169,12 +171,24 @@ namespace Smart_Assistant_Design.smart_broom
 
         private void add_room_to_db(String room_name)
         {
-            // TODO - Add room to db.
+            Database.establishe_connection();
+            String query = "INSERT INTO SmartBroom (room_name) VALUES (@room_name)";
+            SQLiteCommand insert_c = new SQLiteCommand(query, Database.get_connection());
+            insert_c.Parameters.AddWithValue("room_name", room_name);
+
+            insert_c.ExecuteNonQuery();
+            Database.close_connection();
         }
 
         private void remove_room_from_db(String room_name)
         {
-            // TODO - Remove room from db.
+            Database.establishe_connection();
+            String query = "DELETE FROM SmartBroom WHERE room_name=@room_name";
+            SQLiteCommand insert_c = new SQLiteCommand(query, Database.get_connection());
+            insert_c.Parameters.AddWithValue("room_name", room_name);
+
+            insert_c.ExecuteNonQuery();
+            Database.close_connection();
         }
 
         private void add_rm_room_input_click(object sender, EventArgs e)

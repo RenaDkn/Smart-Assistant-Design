@@ -13,12 +13,11 @@ namespace Smart_Assistant_Design.db
 
         public static void establishe_connection()
         {
-            string connectionString = @"Data Source=C:\Users\Rena Dikonimaki\Documents\GitHub\Smart-Assistant-Design\database\database1.db;Version=3;";
+            string connectionString = @"Data Source=C:\Users\rounnus\Documents\github\Smart-Assistant-Design\database\database1.db;Version=3;";
             try
             {
                 conn = new SQLiteConnection(connectionString);
                 conn.Open();
-                MessageBox.Show("hello");
             }
             catch (Exception e)
             {

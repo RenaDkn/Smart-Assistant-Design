@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Data.SQLite;
+using Smart_Assistant_Design.db;
 
 namespace Smart_Assistant_Design.daily_plan
 {
@@ -23,7 +25,22 @@ namespace Smart_Assistant_Design.daily_plan
 
         private void monthCalendar1_DateChanged(object sender, DateRangeEventArgs e)
         {
+            date_pick_field.Value = calendar.SelectionStart.Date;
+        }
 
+        private void add_event_to_db()
+        {
+            Database.establishe_connection();
+            String query = "INSERT INTO DailyPlan (date, RoomName, RoomType, Time) VALUES (@date, @eventname, @eventtype, @time)";
+            SQLiteCommand insert_c = new SQLiteCommand(query, Database.get_connection());
+
+            insert_c.Parameters.AddWithValue("date", date_pick_field.Value.Date.ToString());
+            insert_c.Parameters.AddWithValue("eventname", event_name_field.Text.ToString());
+            insert_c.Parameters.AddWithValue("eventtype", event_type_field.Text.ToString());
+            insert_c.Parameters.AddWithValue("time", time_pick_field.Value.TimeOfDay.ToString());
+
+            insert_c.ExecuteNonQuery();
+            Database.close_connection();
         }
 
         private void add_event_click(object sender, System.EventArgs e)
@@ -35,8 +52,25 @@ namespace Smart_Assistant_Design.daily_plan
                 return;
             }
 
-            // TODO - Add the event to the db.
+            add_event_to_db();
         }
+
+        private void remove_event_from_db()
+        {
+            Database.establishe_connection();
+
+            String query = "DELETE FROM DailyPlan WHERE date=@date and " +
+                           "RoomName=@eventname and RoomType=@eventtype and Time=@time";
+            SQLiteCommand insert_c = new SQLiteCommand(query, Database.get_connection());
+            insert_c.Parameters.AddWithValue("date", date_pick_field.Value.Date.ToString());
+            insert_c.Parameters.AddWithValue("eventname", event_name_field.Text.ToString());
+            insert_c.Parameters.AddWithValue("eventtype", event_type_field.Text.ToString());
+            insert_c.Parameters.AddWithValue("time", time_pick_field.Value.TimeOfDay.ToString());
+
+            insert_c.ExecuteNonQuery();
+            Database.close_connection();
+        }
+
 
         private void delete_event_click(object sender, System.EventArgs e)
         {
@@ -47,7 +81,7 @@ namespace Smart_Assistant_Design.daily_plan
                 return;
             }
 
-            // TOOD - Remove the event from db.
+            remove_event_from_db();
         }
 
         
